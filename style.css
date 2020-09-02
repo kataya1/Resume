@@ -1,0 +1,154 @@
+:root {
+    --bg: #1b1e2b;
+    --section-bg: #292D3E;
+    --accent: #f07178;
+    --font-color: #757CA1;
+    --section-font-color: #A6ACCD;
+    --font-family: Calibri font-size: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#resume {
+    background-color: var(--bg);
+    color: var(--font-color);
+    margin: auto;
+    width: 21cm;
+    height: 29.7cm;
+    overflow: auto;
+    font-family: var(--font-family);
+}
+
+
+header {
+    display: flex;
+    justify-content: baseline;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 700;
+}
+
+section {
+    background-color: var(--section-bg);
+    color: var(--section-font-color);
+    width: fit-content;
+    /* for firefox */
+    width: -moz-fit-content;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+section>header {
+    color: var(--accent);
+    font-family: "Helvetica Neue"
+}
+
+a {
+    color: rgb(109, 158, 235);
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    text-decoration-color: rgb(109, 158, 235);
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-style: solid;
+}
+
+#profile-pic {
+    height: 136px;
+    width: 138.5px;
+    margin: auto;
+    /* try commenting this */
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#info {
+    margin: auto;
+    padding: 15px 0 10px 0;
+}
+
+#name {
+
+    color: rgb(37, 170, 242);
+    font-family: "Helvetica Neue";
+    font-size: 32px;
+    font-style: normal;
+    line-height: 32px;
+    orphans: 2;
+    text-decoration-color: rgb(37, 170, 242);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+
+#title,
+#contacts {
+    color: var(--section-font-color);
+    font-family: Raleway;
+    font-size: 14.6667px;
+    line-height: 14.6667px;
+    padding: 5px;
+}
+
+#contacts {
+    display: inline-block;
+    font: var(--section-font-color)
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+#contacts li {
+    display: inline;
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+p.date {
+    /* date. from. to*/
+}
+
+p.city {
+    /* country */
+}
+
+/* change the margins as you want them to be. */
+/* gotta find a way to reconcoile between page size A4 and letter */
+/* might use javascript */
+@media print {
+    #resume {}
+}
+
+/* this removes the page size option from chrome */
+@page {
+    size: A4;
+}
+
+
+/* 
+#mail{
+    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/gmail.png");
+}
+#phone{
+    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/phone.png");
+}
+#github{
+    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/github.png");
+}
+#facebook{
+    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/facebook.png");
+}
+#linkedin{
+    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/linkedin.png");
+}  */
