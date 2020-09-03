@@ -4,7 +4,9 @@
     --accent: #f07178;
     --font-color: #757CA1;
     --section-font-color: #A6ACCD;
-    --font-family: Calibri font-size: 14px;
+    --link-color: #6d9deb;
+    --font-family: Calibri;
+    font-size: 14px;
 }
 
 * {
@@ -12,12 +14,19 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 #resume {
     background-color: var(--bg);
     color: var(--font-color);
     margin: auto;
-    width: 21cm;
-    height: 29.7cm;
+    /* comment width and height at the end */
+    /* width of A4 */
+    width: 210mm;
+    /* height of letter */
+    height: 279.4mm;
     overflow: auto;
     font-family: var(--font-family);
 }
@@ -25,46 +34,17 @@
 
 header {
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     text-align: center;
     margin: 5px;
     padding: 5px;
     font-weight: 700;
 }
 
-section {
-    background-color: var(--section-bg);
-    color: var(--section-font-color);
-    width: fit-content;
-    /* for firefox */
-    width: -moz-fit-content;
-    margin: 0.5rem;
-    padding: 0.4rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-}
-
-section>header {
-    color: var(--accent);
-    font-family: "Helvetica Neue"
-}
-
-a {
-    color: rgb(109, 158, 235);
-    font-family: Raleway;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 12px;
-    text-decoration-color: rgb(109, 158, 235);
-    text-decoration-line: underline;
-    text-decoration-skip-ink: none;
-    text-decoration-style: solid;
-}
-
 #profile-pic {
     height: 136px;
-    width: 138.5px;
-    margin: auto;
+    width: 136px;
+    /* margin: auto; */
     /* try commenting this */
     transform: matrix(1, 0, 0, 1, 0, 0);
 }
@@ -79,26 +59,25 @@ a {
     color: rgb(37, 170, 242);
     font-family: "Helvetica Neue";
     font-size: 32px;
-    font-style: normal;
-    line-height: 32px;
-    orphans: 2;
     text-decoration-color: rgb(37, 170, 242);
     text-decoration-line: none;
     text-decoration-style: solid;
 }
 
-#title,
+#job-title,
 #contacts {
     color: var(--section-font-color);
     font-family: Raleway;
-    font-size: 14.6667px;
-    line-height: 14.6667px;
     padding: 5px;
 }
 
+#job-title {
+    font-size: 17px;
+}
+
+
 #contacts {
-    display: inline-block;
-    font: var(--section-font-color)
+    font-weight: 600;
 }
 
 
@@ -111,29 +90,69 @@ ul {
 }
 
 img {
+    vertical-align: bottom;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration-color: var(--link-color);
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-style: solid;
+    font-size: 100%;
+}
+
+section {
+    background-color: var(--section-bg);
+    color: var(--section-font-color);
+    width: fit-content;
+    /* for firefox */
+    width: -moz-fit-content;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+section .section-title {
+    color: var(--accent);
+    font-family: "Helvetica Neue";
     vertical-align: middle;
+
 }
 
+/* .hidden{
+    visibility: hidden;
+} */
 
-p.date {
-    /* date. from. to*/
-}
 
+
+
+/* p.date {
+    /* date. from. to
+} */
+/* 
 p.city {
-    /* country */
-}
+    /* country 
+} */
 
 /* change the margins as you want them to be. */
 /* gotta find a way to reconcoile between page size A4 and letter */
 /* might use javascript */
 @media print {
-    #resume {}
+    body {
+        /* uncomment at the end */
+        background-color: var(--bg);
+    }
 }
 
+/* @page {
+    /* margin: 0; 
+
+} */
+
 /* this removes the page size option from chrome */
-@page {
-    size: A4;
-}
+
 
 
 /* 
