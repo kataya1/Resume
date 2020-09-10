@@ -1,3 +1,6 @@
+/********************************
+* *setup
+*********************************/
 :root {
     --bg: #1b1e2b;
     --section-bg: #292D3E;
@@ -16,12 +19,24 @@
 
 html {
     height: 100%;
+    box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/********************************
+* *resume
+*********************************/
 
 #resume {
     background-color: var(--bg);
     color: var(--font-color);
     margin: auto;
+    padding: 5px;
     /* comment width and height at the end */
     /* width of A4 */
     width: 210mm;
@@ -31,9 +46,12 @@ html {
     font-family: var(--font-family);
 }
 
-
-header {
+/********************************
+* *header
+*********************************/
+#resume-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     margin: 5px;
@@ -59,6 +77,7 @@ header {
     color: rgb(37, 170, 242);
     font-family: "Helvetica Neue";
     font-size: 32px;
+    margin:7px;
     text-decoration-color: rgb(37, 170, 242);
     text-decoration-line: none;
     text-decoration-style: solid;
@@ -68,25 +87,27 @@ header {
 #contacts {
     color: var(--section-font-color);
     font-family: Raleway;
-    padding: 5px;
+    margin: 5px;
 }
 
 #job-title {
     font-size: 17px;
 }
 
-
 #contacts {
+    display: flex;
+    flex-wrap: wrap;
     font-weight: 600;
+    list-style-type: none;
+    justify-content: center;
 }
-
 
 ul {
-    list-style-type: none;
+    list-style-position: inside;
 }
 
-#contacts li {
-    display: inline;
+li {
+    padding: 0 5px;
 }
 
 img {
@@ -94,12 +115,35 @@ img {
 }
 
 a {
-    color: var(--link-color);
-    text-decoration-color: var(--link-color);
-    text-decoration-line: underline;
-    text-decoration-skip-ink: none;
-    text-decoration-style: solid;
+    color: inherit;
+    text-decoration-line: none;
     font-size: 100%;
+}
+a:hover{
+    color: var(--link-color);
+}
+
+svg {
+    display: inline-block;
+    font-size: inherit;
+    overflow: visible;
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    vertical-align: bottom;
+}
+
+/********************************
+* *body
+*********************************/
+
+.resume-body {
+    /* there might be more than one resume body, more than one page but only one resume header that's why its a class */
+    /* maybe the resume is display grid and  header and body are it's only two components  */
+    display: grid;
+    grid-gap: 5px;
+    margin: 5px;
+    padding: 5px;
 }
 
 section {
@@ -108,8 +152,8 @@ section {
     width: fit-content;
     /* for firefox */
     width: -moz-fit-content;
-    margin: 0.5rem;
-    padding: 0.4rem;
+
+    padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
 }
@@ -121,20 +165,23 @@ section .section-title {
 
 }
 
+
 /* .hidden{
     visibility: hidden;
 } */
 
+span.date {
+    pass
+}
 
-
-
-/* p.date {
-    /* date. from. to
-} */
 /* 
 p.city {
     /* country 
 } */
+
+/********************************
+* *media queries
+*********************************/
 
 /* change the margins as you want them to be. */
 /* gotta find a way to reconcoile between page size A4 and letter */
@@ -143,6 +190,10 @@ p.city {
     body {
         /* uncomment at the end */
         background-color: var(--bg);
+    }
+
+    .hide {
+        display: none;
     }
 }
 
@@ -171,3 +222,17 @@ p.city {
 #linkedin{
     list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/linkedin.png");
 }  */
+
+/********************************
+* *fonts
+*********************************/
+
+
+/* latin */
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'), url(https://fonts.gstatic.com/l/font?kit=jAncgHBgCsv4eNLTaMECf8DQsNwAXgWTXm0&skey=ba59c4fdb0ab3b35&v=v9) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
