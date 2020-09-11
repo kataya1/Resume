@@ -39,9 +39,9 @@ html {
     padding: 5px;
     /* comment width and height at the end */
     /* width of A4 */
-    width: 210mm;
+    /* width: 210mm; */
     /* height of letter */
-    height: 279.4mm;
+    /* height: 279.4mm; */
     overflow: auto;
     font-family: var(--font-family);
 }
