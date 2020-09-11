@@ -53,7 +53,6 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
     margin: 5px;
     padding: 5px;
     font-weight: 700;
@@ -70,17 +69,14 @@ html {
 #info {
     margin: auto;
     padding: 15px 0 10px 0;
+    text-align: center;
 }
 
 #name {
-
     color: rgb(37, 170, 242);
     font-family: "Helvetica Neue";
     font-size: 32px;
-    margin:7px;
-    text-decoration-color: rgb(37, 170, 242);
-    text-decoration-line: none;
-    text-decoration-style: solid;
+    margin: 7px 5px; 
 }
 
 #job-title,
@@ -96,18 +92,16 @@ html {
 
 #contacts {
     display: flex;
+    column-gap: 10px;
     flex-wrap: wrap;
     font-weight: 600;
     list-style-type: none;
     justify-content: center;
+    align-content: space-between;
 }
 
 ul {
     list-style-position: inside;
-}
-
-li {
-    padding: 0 5px;
 }
 
 img {
@@ -124,9 +118,8 @@ a:hover{
 }
 
 svg {
-    display: inline-block;
     font-size: inherit;
-    overflow: visible;
+    /* overflow: visible; */
     width: 17px;
     height: 17px;
     fill: currentColor;
@@ -142,6 +135,7 @@ svg {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 5px;
+    grid-template-columns: auto auto;
     margin: 5px;
     padding: 5px;
 }
@@ -161,18 +155,25 @@ section {
 section .section-title {
     color: var(--accent);
     font-family: "Helvetica Neue";
-    vertical-align: middle;
 
 }
 
+section .event-name{
+    font-size: 1.2rem;
+}
+section .event-context{
+    font-weight: 500;
+}
 
-/* .hidden{
-    visibility: hidden;
-} */
-
-span.date {
+section .event-date{
+    font:italic
+}
+section .event-location{
+    font-weight: 300;
+}
+/* span.date {
     pass
-}
+} */
 
 /* 
 p.city {
@@ -188,8 +189,7 @@ p.city {
 /* might use javascript */
 @media print {
     body {
-        /* uncomment at the end */
-        background-color: var(--bg);
+        background-color: var(--bg)
     }
 
     .hide {
@@ -198,30 +198,11 @@ p.city {
 }
 
 /* @page {
-    /* margin: 0; 
-
+     margin: 0; 
+/* this removes the page size option from chrome  
+    size: A4;
 } */
 
-/* this removes the page size option from chrome */
-
-
-
-/* 
-#mail{
-    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/gmail.png");
-}
-#phone{
-    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/phone.png");
-}
-#github{
-    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/github.png");
-}
-#facebook{
-    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/facebook.png");
-}
-#linkedin{
-    list-style-image: url("https://img.icons8.com/windows/16/A6ACCD/linkedin.png");
-}  */
 
 /********************************
 * *fonts
