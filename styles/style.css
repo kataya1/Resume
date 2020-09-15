@@ -41,7 +41,7 @@ html {
     /* width of A4 */
     /* width: 210mm; */
     /* height of letter */
-    height: 279.4mm;
+    /* height: 279.4mm; */
     overflow: auto;
     font-family: var(--font-family);
 }
@@ -52,6 +52,7 @@ html {
 #resume-header {
     display: flex;
     flex-wrap: wrap;
+    /* picture in the center after wrap */
     justify-content: center;
     margin: 5px;
     padding: 5px;
@@ -192,12 +193,25 @@ section .event-location {
 }
 
 @media only screen and (min-width: 992px) {
+    :root{
+        font-size:1.4vw;
+    }
+    #resume{
+        padding: 0.5vw;
+    }
+    section{
+        padding: 0.5vw;
+    }
     #resume-header{
-        justify-content: start;
+        /* to take the whole width */
+        justify-content: stretch;
         display: grid;
+        /* to put the text right next to the picture */
+        grid-template-columns: min-content auto;
         grid-template-areas:
+        ". i"
         "p i"
-        "p i";
+        ". i";
     }
 
     #profile-pic {
@@ -208,17 +222,19 @@ section .event-location {
     }
 
     #info {
-        /* margin: 0 auto 0 1vw; */
+        /* margin on the left */
+        margin: 0 0 0 1vw;
         grid-area: i;
         display: grid;
         grid-template-areas: "n c" "t c";
-        
-        justify-items: start;
+        /*left*/
+        justify-items: start ;
     }
 
     #name {
         font-size: 3vw;
         grid-area: n;
+        /* bottom */
         align-self: end;
     }
 
@@ -229,15 +245,29 @@ section .event-location {
     }
 
     #contacts {
+        flex-direction: column;
+        padding: 1vw;
+        row-gap: 1vw;
         font-size: 1.3vw;
         grid-area: c;
-        flex-direction: column;
-        row-gap: 1vw;
-        align-items: end;
-        /* position: absolute;
-        right: 3vw;
-        top: 3vw; */
-        /* padding: 3vw; */
+        /* to the left */
+        justify-self: end;
+        /* to the top */
+        justify-content: start;
+        /* item to the end */
+        align-items: flex-end;
+    }
+    #contacts > li, a{
+        column-gap: 0.3vw;
+        /* svg and text are rearranged */
+        display: flex;
+    }
+
+    svg{
+        height: 1.3vw;
+        width: 1.3vw;
+        /* svg are on the lift */
+        order: 2;
     }
     .show-later {
         display: inline;
@@ -247,7 +277,7 @@ section .event-location {
 @media only screen and (max-width: 345px) {
     #contacts {
         flex-direction: column;
-        row-gap: 5px;
+        row-gap: 10px;
         align-items: center;
     }
 
