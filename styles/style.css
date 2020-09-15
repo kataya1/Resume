@@ -192,19 +192,28 @@ section .event-location {
 }
 
 @media only screen and (min-width: 992px) {
+    #resume-header{
+        justify-content: start;
+        display: grid;
+        grid-template-areas:
+        "p i"
+        "p i";
+    }
+
     #profile-pic {
         margin: 3vw;
+        grid-area: p;
         width: 15vw;
         height: 15vw;
     }
 
     #info {
-        grid-template-areas:
-            "n c"
-            "t c";
-        margin: 0 auto 0 1vw;
+        /* margin: 0 auto 0 1vw; */
+        grid-area: i;
+        display: grid;
+        grid-template-areas: "n c" "t c";
+        
         justify-items: start;
-
     }
 
     #name {
@@ -225,12 +234,11 @@ section .event-location {
         flex-direction: column;
         row-gap: 1vw;
         align-items: end;
-        position: absolute;
+        /* position: absolute;
         right: 3vw;
-        top: 3vw;
+        top: 3vw; */
         /* padding: 3vw; */
     }
-
     .show-later {
         display: inline;
     }
