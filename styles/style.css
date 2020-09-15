@@ -41,7 +41,7 @@ html {
     /* width of A4 */
     /* width: 210mm; */
     /* height of letter */
-    /* height: 279.4mm; */
+    height: 279.4mm;
     overflow: auto;
     font-family: var(--font-family);
 }
@@ -59,24 +59,23 @@ html {
 }
 
 #profile-pic {
-    height: 136px;
-    width: 136px;
-    /* margin: auto; */
+    height: 10em;
+    width: 10em;
     /* try commenting this */
     transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 #info {
     margin: auto;
-    padding: 15px 0 10px 0;
     text-align: center;
+    display: grid;
 }
 
 #name {
     color: rgb(37, 170, 242);
     font-family: "Helvetica Neue";
     font-size: 32px;
-    margin: 7px 5px; 
+    margin: 7px 5px;
 }
 
 #job-title,
@@ -97,7 +96,6 @@ html {
     font-weight: 600;
     list-style-type: none;
     justify-content: center;
-    align-content: space-between;
 }
 
 ul {
@@ -113,17 +111,21 @@ a {
     text-decoration-line: none;
     font-size: 100%;
 }
-a:hover{
+
+a:hover {
     color: var(--link-color);
 }
 
 svg {
-    font-size: inherit;
-    /* overflow: visible; */
+    overflow: visible;
     width: 17px;
     height: 17px;
     fill: currentColor;
     vertical-align: bottom;
+}
+
+.show-later {
+    display: none;
 }
 
 /********************************
@@ -135,18 +137,17 @@ svg {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: auto auto;
+    /* grid-template-columns: auto auto; */
     margin: 5px;
     padding: 5px;
 }
 
 section {
     background-color: var(--section-bg);
-    color: var(--section-font-color);
+    color: #c8cde7;
     width: fit-content;
     /* for firefox */
     width: -moz-fit-content;
-
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
@@ -158,42 +159,92 @@ section .section-title {
 
 }
 
-section .event-name{
+section .event-name {
     font-size: 1.2rem;
 }
-section .event-context{
+
+section .event-context {
     font-weight: 500;
 }
 
-section .event-date{
-    font:italic
+section .event-date {
+    font: 100;
 }
-section .event-location{
+
+section .event-location {
     font-weight: 300;
 }
-/* span.date {
-    pass
-} */
-
-/* 
-p.city {
-    /* country 
-} */
 
 /********************************
 * *media queries
 *********************************/
 
 /* change the margins as you want them to be. */
-/* gotta find a way to reconcoile between page size A4 and letter */
 /* might use javascript */
 @media print {
     body {
         background-color: var(--bg)
     }
 
-    .hide {
+    .print-hide {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #profile-pic {
+        margin: 3vw;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    #info {
+        grid-template-areas:
+            "n c"
+            "t c";
+        margin: 0 auto 0 1vw;
+        justify-items: start;
+
+    }
+
+    #name {
+        font-size: 3vw;
+        grid-area: n;
+        align-self: end;
+    }
+
+    #job-title {
+        grid-area: t;
+        font-size: 1.5vw;
+
+    }
+
+    #contacts {
+        font-size: 1.3vw;
+        grid-area: c;
+        flex-direction: column;
+        row-gap: 1vw;
+        align-items: end;
+        position: absolute;
+        right: 3vw;
+        top: 3vw;
+        /* padding: 3vw; */
+    }
+
+    .show-later {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    #contacts {
+        flex-direction: column;
+        row-gap: 5px;
+        align-items: center;
+    }
+
+    .show-later {
+        display: inline;
     }
 }
 
