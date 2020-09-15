@@ -223,7 +223,7 @@ section .event-location {
 
     #info {
         /* margin on the left */
-        margin: 0 0 0 1vw;
+        margin: 0 0 0 0;
         grid-area: i;
         display: grid;
         grid-template-areas: "n c" "t c";
@@ -246,7 +246,7 @@ section .event-location {
 
     #contacts {
         flex-direction: column;
-        padding: 1vw;
+        padding: 3vw;
         row-gap: 1vw;
         font-size: 1.3vw;
         grid-area: c;
