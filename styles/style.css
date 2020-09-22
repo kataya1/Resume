@@ -107,13 +107,10 @@ ul {
     list-style-type: none;
 }
 
-li::before {
-    content: "⫸ ";
+.resume-body li::before {
+    content: "● ";
 }
 
-#contacts>li::before {
-    content: none;
-}
 
 img {
     vertical-align: bottom;
@@ -166,25 +163,29 @@ section {
     border-radius: 5px;
 }
 
-section .section-title {
+
+.section-title {
     color: var(--accent);
     font-family: "Helvetica Neue";
-
 }
 
-section .event-name {
+.event-name, .event-context, .event-location{
+    font-family: Merriweather, 'Times New Roman', Times, serif;
+}
+.event-name {
     font-size: 1.2rem;
+
 }
 
-section .event-context {
+.event-context {
     font-weight: 500;
 }
 
-section .event-date {
+.event-date {
     font: 100;
+    font-family: "Open Sans" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-section .event-location {
+.event-location {
     font-weight: 300;
 }
 
@@ -292,7 +293,7 @@ section .event-location {
     }
 }
 
-@media only screen and (max-width: 345px) {
+@media only screen and (max-width: 350px) {
     #contacts {
         flex-direction: column;
         align-items: center;
