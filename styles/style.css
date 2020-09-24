@@ -5,8 +5,9 @@
     --bg: #1b1e2b;
     --section-bg: #292D3E;
     --accent: #f07178;
-    --font-color: #757CA1;
+    --font-color: #8c92b3;
     --section-font-color: #A6ACCD;
+    --color: #c8cde7;
     --link-color: #6d9deb;
     --font-family: Calibri;
     font-size: 14px;
@@ -147,17 +148,19 @@ svg {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 5px;
-    /* grid-template-columns: auto auto; */
+    grid-template-columns: repeat( auto-fit, minmax());
     margin: 5px;
     padding: 5px;
 }
 
 section {
     background-color: var(--section-bg);
-    color: #c8cde7;
+    color: var(--color);
     width: fit-content;
+    height: fit-content;
     /* for firefox */
     width: -moz-fit-content;
+    height: -moz-fit-content;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
@@ -316,11 +319,3 @@ section {
 *********************************/
 
 
-/* latin */
-@font-face {
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'), url(https://fonts.gstatic.com/l/font?kit=jAncgHBgCsv4eNLTaMECf8DQsNwAXgWTXm0&skey=ba59c4fdb0ab3b35&v=v9) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
