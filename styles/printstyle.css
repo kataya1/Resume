@@ -1,0 +1,8 @@
+@media print{
+body {
+    background-color: var(--bg)
+}
+
+.hide-on-print {
+    display: none;
+}}

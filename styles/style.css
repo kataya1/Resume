@@ -5,12 +5,14 @@
     --bg: #1b1e2b;
     --section-bg: #292D3E;
     --accent: #f07178;
-    --font-color: #8c92b3;
-    --section-font-color: #A6ACCD;
-    --color: #c8cde7;
+    --dark-font-color: #8c92b3;
+    --font-color: #A6ACCD;
+    --section-font-color: #c8cde7;
     --link-color: #6d9deb;
     --font-family: Calibri;
     font-size: 14px;
+    --website-start-size: 992px;
+    --mobile-start-size: 350px;
 }
 
 * {
@@ -35,7 +37,7 @@ html {
 
 #resume {
     background-color: var(--bg);
-    color: var(--font-color);
+    color: var(--dark-font-color);
     margin: auto;
     padding: 5px;
     /* comment width and height at the end */
@@ -83,7 +85,7 @@ html {
 
 #job-title,
 #contacts {
-    color: var(--section-font-color);
+    color: var(--font-color);
     font-family: Raleway;
     margin: 5px;
 }
@@ -135,7 +137,7 @@ svg {
     vertical-align: bottom;
 }
 
-.show-later {
+.show-on-website {
     display: none;
 }
 
@@ -151,11 +153,12 @@ svg {
     grid-template-columns: repeat( auto-fit, minmax());
     margin: 5px;
     padding: 5px;
+    
 }
 
 section {
     background-color: var(--section-bg);
-    color: var(--color);
+    color: var(--section-font-color);
     width: fit-content;
     height: fit-content;
     /* for firefox */
@@ -170,6 +173,8 @@ section {
 .section-title {
     color: var(--accent);
     font-family: "Helvetica Neue";
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
 }
 
 .event-name, .event-context, .event-location{
@@ -198,15 +203,9 @@ section {
 
 /* change the margins as you want them to be. */
 /* might use javascript */
-@media print {
-    body {
-        background-color: var(--bg)
-    }
 
-    .print-hide {
-        display: none;
-    }
-}
+@import "styles/printstyle.css" print;
+
 
 @media only screen and (min-width: 992px) {
     :root {
@@ -285,13 +284,13 @@ section {
     }
 
     svg {
-        height: 1.3vw;
-        width: 1.3vw;
+        height: 1.4vw;
+        width: 1.4vw;
         /* svg are on the lift */
         order: 2;
     }
 
-    .show-later {
+    .show-on-website {
         display: inline;
     }
 }
@@ -302,7 +301,7 @@ section {
         align-items: center;
     }
 
-    .show-later {
+    .show-on-website {
         display: inline;
     }
 }

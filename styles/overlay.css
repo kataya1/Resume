@@ -1,0 +1,63 @@
+#overlaybutton {
+    position: fixed;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 20vmax;
+    bottom: 2vh;
+    right: -12vmax;
+    padding: 1vmax;
+    padding-right: 12vmax;
+    /* min-height: 40fr; */
+    transition: right 0.3s, padding-right 0.3s;
+    z-index: 1;
+}
+button svg{
+    transform: rotate(180deg);
+    transition: transform 0.4s;
+}
+
+#overlaybutton:hover{
+    right: -10vmax;
+}
+
+#overlaybutton[aria-pressed="true"]{
+    
+    right: 1vmax;
+    padding-right: 1vmax;
+    
+    
+}
+button[aria-pressed="true"] svg{
+    transform: rotate(0deg);
+}
+#overlay {
+    height: 0;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.3);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+
+/********************************
+* *media querries
+*********************************/
+
+@media only screen and (min-width: 992px) {
+
+    /* to make the button circular don't ask me, why it works i don't know */
+    #overlaybutton{
+        font-size: 0%;
+
+    } 
+
+}
