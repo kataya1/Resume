@@ -1,0 +1,91 @@
+
+@media only screen and (min-width: 992px) {
+    :root {
+        font-size: 1.4vw;
+    }
+
+    .resume-body {
+        padding: 0.5vw;
+    }
+
+    section {
+        padding: 0.5vw;
+    }
+
+    #resume-header {
+        /* to take the whole width */
+        justify-content: stretch;
+        display: grid;
+        /* to put the text right next to the picture */
+        grid-template-columns: min-content auto;
+        grid-template-areas:
+            ". i"
+            "p i"
+            ". i";
+    }
+    #header-container{
+        height: 100vh;
+    }
+
+    #profile-pic {
+        margin: 3vw;
+        grid-area: p;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    #info {
+        /* margin on the left */
+        margin: 0 0 0 1vw;
+        grid-area: i;
+        display: grid;
+        grid-template-areas: "n c""t c";
+        /*left*/
+        justify-items: start;
+    }
+
+    #name {
+        font-size: 3vw;
+        grid-area: n;
+        /* bottom */
+        align-self: end;
+    }
+
+    #job-title {
+        grid-area: t;
+        font-size: 1.5vw;
+
+    }
+
+    #contacts {
+        flex-direction: column;
+        padding: 3vw;
+        row-gap: 1vw;
+        font-size: 1.3vw;
+        grid-area: c;
+        /* to the left */
+        justify-self: end;
+        /* to the top */
+        justify-content: start;
+        /* item to the end */
+        align-items: flex-end;
+    }
+
+    #contacts>li,
+    a {
+        column-gap: 0.3vw;
+        /* svg and text are rearranged */
+        display: flex;
+    }
+
+    svg {
+        height: 1.4vw;
+        width: 1.4vw;
+        /* svg are on the lift */
+        order: 2;
+    }
+
+    .show-on-website {
+        display: inline;
+    }
+}

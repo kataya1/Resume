@@ -59,15 +59,22 @@ html {
     /* picture in the center after wrap */
     justify-content: center;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
     font-weight: 700;
 }
 
 #profile-pic {
     height: 10em;
     width: 10em;
+    object-fit: cover;
+    
     /* try commenting this */
-    transform: matrix(1, 0, 0, 1, 0, 0);
+    /* clip-path: circle(); */
+    /* hexagon */
+    /* clip-path: polygon(25% 0%, 75% 0%, 100% 43.30127%, 75% 86.60254%, 25% 86.60254%, 0% 43.30127%); */
+    /* octagon */
+    clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
+    
 }
 
 #info {
@@ -140,6 +147,9 @@ svg {
 .show-on-website {
     display: none;
 }
+.show-on-mobile {
+    display: none;
+}
 
 /********************************
 * *body
@@ -165,8 +175,8 @@ section {
     width: -moz-fit-content;
     height: -moz-fit-content;
     padding: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 0.3vw;
 }
 
 
@@ -207,91 +217,15 @@ section {
 @import "styles/printstyle.css" print;
 
 
-@media only screen and (min-width: 992px) {
-    :root {
-        font-size: 1.4vw;
+@media only screen and (min-width: 793px) {
+    body{
+        background-color: #ddd;
     }
+    #resume {
+        width: 793px;
+        margin: 80px auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 
-    .resume-body {
-        padding: 0.5vw;
-    }
-
-    section {
-        padding: 0.5vw;
-    }
-
-    #resume-header {
-        /* to take the whole width */
-        justify-content: stretch;
-        display: grid;
-        /* to put the text right next to the picture */
-        grid-template-columns: min-content auto;
-        grid-template-areas:
-            ". i"
-            "p i"
-            ". i";
-    }
-
-    #profile-pic {
-        margin: 3vw;
-        grid-area: p;
-        width: 15vw;
-        height: 15vw;
-    }
-
-    #info {
-        /* margin on the left */
-        margin: 0 0 0 1vw;
-        grid-area: i;
-        display: grid;
-        grid-template-areas: "n c""t c";
-        /*left*/
-        justify-items: start;
-    }
-
-    #name {
-        font-size: 3vw;
-        grid-area: n;
-        /* bottom */
-        align-self: end;
-    }
-
-    #job-title {
-        grid-area: t;
-        font-size: 1.5vw;
-
-    }
-
-    #contacts {
-        flex-direction: column;
-        padding: 3vw;
-        row-gap: 1vw;
-        font-size: 1.3vw;
-        grid-area: c;
-        /* to the left */
-        justify-self: end;
-        /* to the top */
-        justify-content: start;
-        /* item to the end */
-        align-items: flex-end;
-    }
-
-    #contacts>li,
-    a {
-        column-gap: 0.3vw;
-        /* svg and text are rearranged */
-        display: flex;
-    }
-
-    svg {
-        height: 1.4vw;
-        width: 1.4vw;
-        /* svg are on the lift */
-        order: 2;
-    }
-
-    .show-on-website {
-        display: inline;
     }
 }
 
@@ -301,7 +235,7 @@ section {
         align-items: center;
     }
 
-    .show-on-website {
+    .show-on-mobile {
         display: inline;
     }
 }
