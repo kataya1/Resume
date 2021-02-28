@@ -15,6 +15,8 @@ let initialOverlayHeigth = getComputedStyle(document.documentElement).getPropert
 let overlayWidth = getComputedStyle(document.documentElement).getPropertyValue('--overlay-width')
 let overlayheigth = getComputedStyle(document.documentElement).getPropertyValue('--overlay-height')
 const button = document.querySelector("#overlaybutton")
+let responsiveStylesheet = document.querySelector('#xyz');
+responsiveStylesheet.disabled = true;
 
 function openNav(overlay) {
     overlay.style.width = overlayWidth;
@@ -26,6 +28,7 @@ function closeNav(overlay) {
     overlay.style.height = initialOverlayHeigth;
 }
 
+// overlay button
 buttonHandler = () => {
   const overlay = document.querySelector("#overlay")
   const button = document.querySelector("#overlaybutton")
@@ -37,10 +40,16 @@ buttonHandler = () => {
     openNav(overlay)
   }
   button.setAttribute("aria-pressed", !toggled)
-  console.log(Boolean(toggled))
-  console.log(button)
+
 }
 
+
+makeResponsive = (el) => {
+  // stylesheet.disabled = e.target.checked
+  console.log(el)
+  responsiveStylesheet.disabled = !(el.checked)
+  
+}
 onCheckboxChange = (e) => {
   e.preventDefault()
   console.log(e)
@@ -48,6 +57,7 @@ onCheckboxChange = (e) => {
   let checkbox_state = e.target.checked
 }
 
+// print function
 printCV= () => {
   //     // printinig
   window.print();
