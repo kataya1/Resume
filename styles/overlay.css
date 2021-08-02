@@ -60,6 +60,7 @@ button[aria-pressed="true"] svg{
     color: var(--overlay-font-color);
     overflow: hidden;
     transition: 0.5s;
+    
   }
 
 
@@ -73,6 +74,9 @@ button[aria-pressed="true"] svg{
     #overlaybutton{
         font-size: 0%;
     } 
+    #overlay{
+        font-size: 1vmax;
+    }
 
 }
 

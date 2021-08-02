@@ -12,6 +12,12 @@
         padding: 0.5vw;
     }
 
+    #resume {
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+
+    }
     #resume-header {
         /* to take the whole width */
         justify-content: stretch;

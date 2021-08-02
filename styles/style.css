@@ -207,6 +207,9 @@ section {
     font-weight: 300;
 }
 
+.preview-on-website{
+    display: none;
+}
 /********************************
 * *media queries
 *********************************/
@@ -236,7 +239,13 @@ section {
     }
 
     .show-on-mobile {
-        display: inline;
+        display: contents;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .preview-on-website{
+        display: contents;
     }
 }
 
