@@ -1,13 +1,8 @@
 @media print{
-body {
-    background-color: var(--bg)
+    #resume{
+        width: auto;
+    }
 }
-#resume{
-    width: auto;
-}
-.hide-on-print {
-    display: none;
-}}
 
  /* @page {
      margin: 0; 

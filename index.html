@@ -12,12 +12,10 @@
     <!-- <link type="text/css" rel="stylesheet" href="styles/normalize.css"> -->
     <link type="text/css" rel="stylesheet" href="styles/reset.css" async>
     <link type="text/css" rel="stylesheet" href="styles/style.css" async>
-    <link rel="stylesheet" href="styles/overlay.css" defer>
     <link rel="stylesheet" media="print" href="styles/printstyle.css" defer>
     <link rel="stylesheet" href="styles/firefoxfont.css" async>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@300;600&display=swap"
-        defer>
-    <link rel="stylesheet" href="styles/website-responsive.css" id="xyz" defer>
+        defer crossorigin>
 
 
 </head>
@@ -28,7 +26,7 @@
         <div id="header-container">
             <header id="resume-header">
 
-                <img id="profile-pic" alt="profile-pic" src="assits/smilyblackandwhite.jpg">
+                <img id="profile-pic" alt="profile-pic" src="assits/sc.jpg">
                 <div id="info">
                     <h1 id="name">Mohamed 'Kataya' Abd-Ellatif</h1>
                     <h2 id="job-title">Full-Stack Software Engineer</h2>
@@ -113,34 +111,39 @@
         </div>
 
         <div class="resume-body">
-            <section>
-                <header class="section-title">EDUCATION</header>
-                <div><span class="event-name">Alexandria University</span> <span class="event-context">B.Sc. in Computer
+            <fieldset>
+                <!-- legend has a span inside because there is a weired 2px padding on the right for text -->
+                <legend class="section-title"><span>EDUCATION</span></legend>
+                <div id="edu-div"><span class="event-name">Alexandria University</span> <span class="event-context">B.Sc. in Computer
                         and Communication Engineering</span> <br>
                     <span class="event-date">class of 2020</span> <span class="event-location">Alexandria, Egypt</span>
                 </div>
 
-            </section>
-            <section>
-                <header class="section-title">PROJECTS</header>
-                <section>GoogleNet CNN
+            </fieldset>
+            <fieldset id="projects">
+                <legend class="section-title">PROJECTS</legend>
+                <fieldset><legend for="">GoogleNet CNN</legend>
                     A deep convolutional neural network for CIFAR image classification using inception architecture.
-                    Solo project. using Pytorch. </section>
-                <section>StoryGUI — A 3d Game Story Teller
+                    Solo project. using Pytorch. </fieldset>
+                <fieldset>
+                    <legend>Game StoryBoarding</legend>
+                    StoryGUI — A 3d Game Story Teller
                     A new method of storytelling in a 3D game through GUI. Solo. Languages used: C#, ShaderLab.
-                </section>
-                <section>Flappy Bird Online
+                </fieldset>
+                <fieldset>
+                    <legend>Flappy Bird Online</legend>  
                     A multiplayer flappy bird game using tcp/udp sockets for peer discovery and host-player connection.
-                    Solo. Languages used: Python, C#.</section>
-                <section>Fooddie
+                    Solo. Languages used: Python, C#.</fieldset>
+                <fieldset>
+                    <legend>Fooddie</legend>
                     A Food reservation APP for a Startup. languages used: XML, Java, SQLite (No Link because the code is
-                    private). Independent project.</section>
-            </section>
+                    private). Independent project.</fieldset>
+            </fieldset>
             <section class="hide-on-print">
                 hide-on-print
             </section>
-            <section>
-                <header class="section-title">SKILLS</header>
+            <fieldset>
+                <legend class="section-title"><span>SKILLS</span></legend>
                 <section>
                     <header class="section-title">programming lang</header>
                     <ul>
@@ -181,57 +184,10 @@
                         <li>Machine learning</li>
                     </ul>
                 </section>
-            </section>
+            </fieldset>
         </div>
     </div>
-    <div class="hide-on-print">
-        <div id="overlay" class="hide-on-print">
-
-            <h4>style scheme</h4>
-            <ul class="view-on-website">
-                <li>A4</li>
-                <li>Letter</li>
-            </ul>
-            <br>
-
-            <h4>style scheme</h4>
-            <br>
-
-            <div>
-                <input type="radio" name="style-scheme-picker" id="color-pick-1" class="style-scheme-picker">
-                <input type="radio" name="style-scheme-picker" id="color-pick-2" class="style-scheme-picker">
-                <input type="radio" name="style-scheme-picker" id="color-pick-3" class="style-scheme-picker">
-            </div>
-
-            <h4>print options</h4>
-            <div>
-                <input type="checkbox" name="keep image" id="keep-image" onchange="keepImage()" aria-checked="true"
-                    checked="checked">
-                <label for="keep-image">keep image</label>
-                <br>
-                <br>
-                <div class="preview-on-website">
-                    <ul>
-                        <li>A4</li>
-                        <li>Letter</li>
-                    </ul><br>
-                    <h4>experimental</h4>
-                    <input type="checkbox" name="responsive-website-checkbox" id="responsive-website-checkbox"
-                        onchange="makeResponsive(this)"> responsive
-                </div>
-
-            </div>
-            <button id="overlaybutton" onclick="buttonHandler()" aria-pressed="false">
-                <svg version="1.1" id="Layer_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 24 24"
-                    enable-background="new 0 0 24 24" xml:space="preserve" fill="#5F6368">
-                    <path d="M8.59,16.59L13.17,12L8.59,7.41L10,6l6,6l-6,6L8.59,16.59z"></path>
-                    <path fill="none" d="M0,0h24v24H0V0z"></path>
-                </svg>
-
-            </button>
-        </div>
+   
 </body>
 
 </html>
-<!-- section>header.section-title -->
-<script src="scripts/js.js"></script>

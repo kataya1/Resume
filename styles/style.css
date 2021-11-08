@@ -2,13 +2,25 @@
 * *setup
 *********************************/
 :root {
-    --bg: #1b1e2b;
+    /* --bg: #1b1e2b;
     --section-bg: #292D3E;
     --accent: #f07178;
     --dark-font-color: #8c92b3;
     --font-color: #A6ACCD;
     --section-font-color: #c8cde7;
     --link-color: #6d9deb;
+    --font-family: Calibri; */
+    --bg: white;
+    --section-bg: #e5e5e5;
+    --accent: #eb3942;
+    --dark-font-color: black;
+    --font-color: #777;
+    --section-font-color: black;
+    --link-color: #5a95f5;
+    --big-name: black;
+    --body-background-color: #e5e5e5;
+    --body-shadow-alpha: 0.2;
+
     --font-family: Calibri;
     font-size: 14px;
     --website-start-size: 992px;
@@ -30,6 +42,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
 
 /********************************
 * *resume
@@ -63,93 +76,90 @@ html {
     font-weight: 700;
 }
 
-#profile-pic {
-    height: 10em;
-    width: 10em;
-    object-fit: cover;
-    
-    /* try commenting this */
-    /* clip-path: circle(); */
-    /* hexagon */
-    /* clip-path: polygon(25% 0%, 75% 0%, 100% 43.30127%, 75% 86.60254%, 25% 86.60254%, 0% 43.30127%); */
-    /* octagon */
-    clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
-    
-}
+    #profile-pic {
+        height: 10em;
+        width: 10em;
+        object-fit: cover;
+        
+        /* try commenting this */
+        /* clip-path: circle(); */
+        /* hexagon */
+        /* clip-path: polygon(25% 0%, 75% 0%, 100% 43.30127%, 75% 86.60254%, 25% 86.60254%, 0% 43.30127%); */
+        /* octagon */
+        clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
+        
+    }
 
-#info {
-    margin: auto;
-    text-align: center;
-    display: grid;
-}
+    #info {
+        margin: auto;
+        text-align: center;
+        display: grid;
+    }
 
-#name {
-    color: rgb(37, 170, 242);
-    font-family: "Helvetica Neue";
-    font-size: 32px;
-    margin: 7px 5px;
-}
+        #name {
+            color: var(--big-name);
+            font-family: "Helvetica Neue";
+            font-size: 32px;
+            margin: 7px 5px;
+        }
 
-#job-title,
-#contacts {
-    color: var(--font-color);
-    font-family: Raleway;
-    margin: 5px;
-}
+        #job-title,
+        #contacts {
+            color: var(--font-color);
+            font-family: Raleway;
+            margin: 5px;
+        }
 
-#job-title {
-    font-size: 17px;
-}
+        #job-title {
+            font-size: 17px;
+        }
 
-#contacts {
-    font-size: 14px;
-    display: flex;
-    column-gap: 10px;
-    row-gap: 10px;
-    flex-wrap: wrap;
-    font-weight: 600;
-    list-style-type: none;
-    justify-content: center;
-}
+        #contacts {
+            font-size: 14px;
+            display: flex;
+            column-gap: 10px;
+            row-gap: 10px;
+            flex-wrap: wrap;
+            font-weight: 600;
+            list-style-type: none;
+            justify-content: center;
+        }
 
-ul {
-    list-style-position: inside;
-    list-style-type: none;
-}
-
-.resume-body li::before {
-    content: "● ";
-}
+        ul {
+            list-style-position: inside;
+            list-style-type: none;
+        }
 
 
-img {
-    vertical-align: bottom;
-}
 
-a {
-    color: inherit;
-    text-decoration-line: none;
-    font-size: 100%;
-}
+        img {
+            vertical-align: bottom;
+        }
 
-a:hover {
-    color: var(--link-color);
-}
+        a {
+            color: inherit;
+            text-decoration-line: none;
+            font-size: 100%;
+        }
 
-svg {
-    overflow: visible;
-    width: 17px;
-    height: 17px;
-    fill: currentColor;
-    vertical-align: bottom;
-}
+        a:hover {
+            color: var(--link-color);
+        }
 
-.show-on-website {
-    display: none;
-}
-.show-on-mobile {
-    display: none;
-}
+        svg {
+            overflow: visible;
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+            vertical-align: bottom;
+        }
+
+        .show-on-website {
+            display: none;
+        }
+        .show-on-mobile {
+            display: none;
+        }
 
 /********************************
 * *body
@@ -160,56 +170,108 @@ svg {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat( auto-fit, minmax());
+    /* grid-template-columns: repeat( auto-fit, minmax()); */
     margin: 5px;
     padding: 5px;
     
 }
-
-section {
-    background-color: var(--section-bg);
-    color: var(--section-font-color);
-    width: fit-content;
-    height: fit-content;
-    /* for firefox */
-    width: -moz-fit-content;
-    height: -moz-fit-content;
-    padding: 5px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    border-radius: 0.3vw;
-}
+    .resume-body li::before {
+        content: "● ";
+    }
 
 
-.section-title {
-    color: var(--accent);
-    font-family: "Helvetica Neue";
-    text-transform: uppercase;
-    letter-spacing: 0.3ch;
-}
+    section, fieldset {
+        background-color: var(--section-bg);
+        /* when */
+        color: var(--section-font-color);
+        /* width: fit-content; */
+        height: fit-content;
+        /* for firefox */
+        /* width: -moz-fit-content; */
+        height: -moz-fit-content;
+        padding: 5px;
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        border-radius: 0.3vw;
+        
+        animation: clarity 1s forwards;
+        animation-delay: 1s;
+    }
 
-.event-name, .event-context, .event-location{
-    font-family: Merriweather, 'Times New Roman', Times, serif;
-}
-.event-name {
-    font-size: 1.2rem;
+    fieldset{
+        border-radius: 0;
+        border-top: 1px solid black;
+    }
 
-}
+        legend{
+            padding: 0 5px;
+            position: relative;
+            margin-left: 10px;
+            /* font-size: 90%; */
+        }
+        /*  */
+        legend span{
+            padding-left: 2px;
+        }
+        legend::before {
+            position: absolute;
+            content: '';
+            height: 8px;
+            border-left: 1px solid gray;
+            left: 0px;
+            top: 3.5px;
+        }
+        legend::after {
+            position: absolute;
+            content: '';
+            height: 8px;
+            border-right: 1px solid gray;
+            right: 0px;
+            top: 3.5px;
+        }
+        #edu-div{
+            /* width: fit-content; */
+            margin: auto;
+        }
 
-.event-context {
-    font-weight: 500;
-}
 
-.event-date {
-    font: 100;
-    font-family: "Open Sans" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.event-location {
-    font-weight: 300;
-}
+    .section-title {
+        color: var(--accent);
+        font-family: "Helvetica Neue";
+        text-transform: uppercase;
+        letter-spacing: 0.3ch;
+    }
 
-.preview-on-website{
-    display: none;
-}
+    .event-name, .event-context, .event-location{
+        font-family: Merriweather, 'Times New Roman', Times, serif;
+    }
+    .event-name {
+        font-size: 1.2rem;
+
+    }
+
+    .event-context {
+        font-weight: 500;
+    }
+
+    .event-date {
+        font: 100;
+        font-family: "Open Sans" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .event-location {
+        font-weight: 300;
+    }
+
+    #projects{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+
+    }
+
+    .preview-on-website{
+        display: none;
+    }
+
 /********************************
 * *media queries
 *********************************/
@@ -222,12 +284,12 @@ section {
 
 @media only screen and (min-width: 793px) {
     body{
-        background-color: #ddd;
+        background-color: var(--body-background-color);
     }
     #resume {
         width: 793px;
         margin: 80px auto;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
 
     }
 }
@@ -261,3 +323,17 @@ section {
 *********************************/
 
 
+
+
+/********************************
+* *animation
+*********************************/
+/* this animation is made for dev only. remove in production*/
+@keyframes clarity {
+    from{
+        background-color: var(--section-bg);
+    }
+    to{
+        background-color: white;
+    }
+}
