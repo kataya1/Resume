@@ -1,0 +1,30 @@
+
+section, fieldset {
+background-color: var(--section-bg);
+animation: clarity 1s forwards;
+animation-delay: 1s;
+/* color: red; */
+}
+@media print{
+
+    /* DEV */
+    body {
+        background-color: gray;
+    }
+    
+}
+
+
+/********************************
+* *DEV 
+*********************************/
+/* to be removed in production */
+/* this animation is made for dev only. remove in production*/
+@keyframes clarity {
+    from{
+        background-color: var(--section-bg);
+    }
+    to{
+        background-color: white;
+    }
+}

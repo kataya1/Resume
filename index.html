@@ -14,6 +14,7 @@
     <link type="text/css" rel="stylesheet" href="styles/style.css" async>
     <link rel="stylesheet" media="print" href="styles/printstyle.css" defer>
     <link rel="stylesheet" href="styles/firefoxfont.css" async>
+    <link rel="stylesheet" href="styles/dev.css"> <!-- comment this in production -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@300;600&display=swap"
         defer crossorigin>
 
@@ -25,8 +26,9 @@
     <div id="resume">
         <div id="header-container">
             <header id="resume-header">
-
-                <img id="profile-pic" alt="profile-pic" src="assits/sc.jpg">
+                <div id="profile-pic-frame">
+                    <img id="profile-pic" alt="profile picture" src="assits/sc.jpg">
+                </div>
                 <div id="info">
                     <h1 id="name">Mohamed 'Kataya' Abd-Ellatif</h1>
                     <h2 id="job-title">Full-Stack Software Engineer</h2>
@@ -111,42 +113,53 @@
         </div>
 
         <div class="resume-body">
-            <fieldset>
+            <fieldset id="EDUCATION">
                 <!-- legend has a span inside because there is a weired 2px padding on the right for text -->
-                <legend class="section-title"><span>EDUCATION</span></legend>
-                <div id="edu-div"><span class="event-name">Alexandria University</span> <span class="event-context">B.Sc. in Computer
+                <legend class="section-title"><span class="pl-2px">EDUCATION</span></legend>
+
+                <div class="edu-div"><span class="event-name">Information Technology Institute</span> <span class="event-context">Diploma in Full Stack Development</span> <br>
+                <span class="event-date">July - Nov</span> <span class="event-location">Alexandria, Egypt</span>
+                </div>
+                <div class="edu-div"><span class="event-name">Alexandria University</span> <span class="event-context">B.Sc. in Computer
                         and Communication Engineering</span> <br>
                     <span class="event-date">class of 2020</span> <span class="event-location">Alexandria, Egypt</span>
                 </div>
 
             </fieldset>
             <fieldset id="projects">
-                <legend class="section-title">PROJECTS</legend>
-                <fieldset><legend for="">GoogleNet CNN</legend>
+                <legend class="section-title"><span class="pl-2px">PROJECTS</span></legend>
+                <section><div class="project-title">GoogleNet CNN</div>
                     A deep convolutional neural network for CIFAR image classification using inception architecture.
-                    Solo project. using Pytorch. </fieldset>
-                <fieldset>
-                    <legend>Game StoryBoarding</legend>
+                    Solo project. using Pytorch. </section>
+                <section >
+                    <div class="project-title"><a href="https://github.com/kataya1/a-game-story">Game story</a></div>
                     StoryGUI — A 3d Game Story Teller
-                    A new method of storytelling in a 3D game through GUI. Solo. Languages used: C#, ShaderLab.
-                </fieldset>
-                <fieldset>
-                    <legend>Flappy Bird Online</legend>  
+                    story coding and user interface part of a 3D game. Solo. Languages used: C#, ShaderLab.
+                </section>
+                <section >
+                    <div class="project-title">Flappy Bird Online</div>  
                     A multiplayer flappy bird game using tcp/udp sockets for peer discovery and host-player connection.
-                    Solo. Languages used: Python, C#.</fieldset>
-                <fieldset>
-                    <legend>Fooddie</legend>
+                    Solo. Languages used: Python, C#.</section>
+                <section >
+                    <div class="project-title">Fooddie</div>
                     A Food reservation APP for a Startup. languages used: XML, Java, SQLite (No Link because the code is
-                    private). Independent project.</fieldset>
+                    private). Independent project.</section>
+                <section >
+                    <div class="project-title">This Resume</div>
+                    This Resume is a program, languages user: html, css</section>
+                <section >
+                    <div class="project-title">Pinterest</div>
+                    A Food reservation APP for a Startup. languages used: XML, Java, SQLite (No Link because the code is
+                    private). Independent project.</section>
             </fieldset>
             <section class="hide-on-print">
                 hide-on-print
             </section>
-            <fieldset>
-                <legend class="section-title"><span>SKILLS</span></legend>
+            <fieldset id="skills">
+                <legend class="section-title"><span class="pl-2px">SKILLS</span></legend>
                 <section>
-                    <header class="section-title">programming lang</header>
-                    <ul>
+                    <header class="bullets-title">programming lang</header>
+                    <ul class="bullet-points">
                         <li>python</li>
                         <li>html</li>
                         <li>css</li>
@@ -155,8 +168,8 @@
                     </ul>
                 </section>
                 <section>
-                    <header class="section-title">Tools and frameworks</header>
-                    <ul>
+                    <header class="bullets-title">Tools and frameworks</header>
+                    <ul class="bullet-points">
                         <li>git</li>
                         <li>linux</li>
                         <li>aws</li>
@@ -165,20 +178,10 @@
                     </ul>
                 </section>
                 <section>
-                    <header class="section-title">languages</header>
-                    <ul>
-                        <li>English(fluent)</li>
-                        <li>arabic(fluent)</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </section>
-                <section>
-                    <header class="section-title">knowledge in</header>
-                    <ul>
+                    <header class="bullets-title">knowledge in</header>
+                    <ul class="bullet-points">
                         <li>Algorithms</li>
-                        <li>Data Structures</li>
+                        <li>DataStructures</li>
                         <li>OOP</li>
                         <li>Databases</li>
                         <li>Machine learning</li>

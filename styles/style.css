@@ -12,9 +12,9 @@
     --font-family: Calibri; */
     --bg: white;
     --section-bg: #e5e5e5;
-    --accent: #eb3942;
+    --accent: tomato;
     --dark-font-color: black;
-    --font-color: #777;
+    --font-color: #656565;
     --section-font-color: black;
     --link-color: #5a95f5;
     --big-name: black;
@@ -52,12 +52,15 @@ html {
     background-color: var(--bg);
     color: var(--dark-font-color);
     margin: auto;
-    padding: 5px;
-    /* comment width and height at the end */
+    padding: 20px;
     /* width of A4 */
     /* width: 210mm; */
     /* height of letter */
     /* height: 279.4mm; */
+    /* convert 210mm --> 793.7px */
+    /* convert 279.4mm --> 1056px */
+    width: 210mm;
+    height: 279.4mm;
     /* i've added those custome dimmension to chrome and firefox because of this problem ⫷#resume is not body so when you make media querry engage on size of body and not size of #resume⫸*/
     overflow: auto;
     font-family: var(--font-family);
@@ -66,29 +69,43 @@ html {
 /********************************
 * *header
 *********************************/
+#header-container {
+    margin-bottom: 20px;
+   }
+   
 #resume-header {
     display: flex;
     flex-wrap: wrap;
     /* picture in the center after wrap */
     justify-content: center;
-    margin: 5px;
-    padding: 20px;
     font-weight: 700;
 }
+    #profile-pic-frame {
+        height: 8em;
+        width: 8em;
+        border-radius: 50%;
+        background-color: gray;
+        /* clip-path: polygon(31.08% 3.57%, 67.13% 1.78%, 97.32% 29.29%, 97.32% 68.03%, 69.82% 97.32%, 27.51% 97.32%, 2.68% 70.71%, 2.68% 29.29%);
+        clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%); */
+        clip-path: polygon(29.289322% 3%, 70.710672% 3%, 97% 29.289322%, 97% 70.710672%, 70.710672% 97%, 29.289322% 97%, 3% 70.710672%, 3% 29.289322%);
+        display: grid;
+        place-content: center;
 
-    #profile-pic {
-        height: 10em;
-        width: 10em;
-        object-fit: cover;
-        
-        /* try commenting this */
-        /* clip-path: circle(); */
-        /* hexagon */
-        /* clip-path: polygon(25% 0%, 75% 0%, 100% 43.30127%, 75% 86.60254%, 25% 86.60254%, 0% 43.30127%); */
-        /* octagon */
-        clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
-        
-    }
+
+    }    
+        #profile-pic {
+            height: 7em;
+            width: 7em;
+            /* aspect-ratio: 1/1; */
+            object-fit: cover;
+            
+            /* try commenting this */
+            /* clip-path: circle(); */
+            /* hexagon */
+            /* clip-path: polygon(25% 0%, 75% 0%, 100% 43.30127%, 75% 86.60254%, 25% 86.60254%, 0% 43.30127%); */
+            /* octagon */
+            clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
+        }
 
     #info {
         margin: auto;
@@ -112,6 +129,7 @@ html {
 
         #job-title {
             font-size: 17px;
+            color: var(--accent);
         }
 
         #contacts {
@@ -154,12 +172,12 @@ html {
             vertical-align: bottom;
         }
 
-        .show-on-website {
-            display: none;
-        }
-        .show-on-mobile {
-            display: none;
-        }
+.show-on-website {
+    display: none;
+}
+.show-on-mobile {
+    display: none;
+}
 
 /********************************
 * *body
@@ -169,19 +187,34 @@ html {
     /* there might be more than one resume body, more than one page but only one resume header that's why its a class */
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 10px;
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas: 
+        "education  skills"
+        "projects projects"
+        ". ." ;
+
     /* grid-template-columns: repeat( auto-fit, minmax()); */
-    margin: 5px;
-    padding: 5px;
     
 }
-    .resume-body li::before {
-        content: "● ";
+    #EDUCATION{
+        grid-area: education;
+    }
+    #projects{
+        grid-area: projects
+    }
+    #skills{
+        grid-area: skills
     }
 
 
+    /* .resume-body li::before {
+        content: "● ";
+        /* content: "| "; 
+    } */
+
+
     section, fieldset {
-        background-color: var(--section-bg);
         /* when */
         color: var(--section-font-color);
         /* width: fit-content; */
@@ -191,51 +224,43 @@ html {
         height: -moz-fit-content;
         padding: 5px;
         /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-        border-radius: 0.3vw;
-        
-        animation: clarity 1s forwards;
-        animation-delay: 1s;
     }
 
     fieldset{
-        border-radius: 0;
-        border-top: 1px solid black;
+        border-top: 2px solid black;
     }
 
         legend{
             padding: 0 5px;
             position: relative;
-            margin-left: 10px;
+            margin-left:2em;
+            /* margin:auto; */
+            padding-bottom:0.5em;
             /* font-size: 90%; */
         }
-        /*  */
-        legend span{
+        legend span.pl-2px{
+            /*  there is a weired margin after the text in legend. the text doesn't look in the center*/
             padding-left: 2px;
         }
-        legend::before {
+        /* legend::before, legend::after{
+            /* this is for the little shits at the inner ends of the border 
             position: absolute;
             content: '';
             height: 8px;
             border-left: 1px solid gray;
-            left: 0px;
             top: 3.5px;
+        }
+        legend::before{
+            left: 0px;
         }
         legend::after {
-            position: absolute;
-            content: '';
-            height: 8px;
-            border-right: 1px solid gray;
             right: 0px;
-            top: 3.5px;
-        }
-        #edu-div{
-            /* width: fit-content; */
-            margin: auto;
-        }
+        } */
 
 
+    
     .section-title {
-        color: var(--accent);
+        color: var(--dark-font-color);
         font-family: "Helvetica Neue";
         text-transform: uppercase;
         letter-spacing: 0.3ch;
@@ -246,11 +271,14 @@ html {
     }
     .event-name {
         font-size: 1.2rem;
-
+        /* padding-top: 10px; */
+        display: inline-block;
+        margin-top: 10px;
     }
 
     .event-context {
         font-weight: 500;
+        margin-left: 7px;
     }
 
     .event-date {
@@ -258,19 +286,56 @@ html {
         font-family: "Open Sans" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     .event-location {
+        margin-left: 7px;
         font-weight: 300;
     }
-
+    #EDUCATION{
+        /* display: flex;
+        flex-direction: column; */
+        /* gap: 5px; */
+    }
+        .edu-div{
+            /* width: fit-content; */
+            /* margin: auto; */
+            margin: 5px 0px
+        }
+            .edu-div span{
+                /* padding: 10px; */
+                line-height: 1.5rem;
+            }
     #projects{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 5px;
 
     }
+        .project-title, .bullets-title{
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: bold;
+            text-align: start;
+            margin-bottom: 3px;
+               
+        }
+    #skills{
 
-    .preview-on-website{
-        display: none;
     }
+        section .bullet-points{
+            display: flex;
+            flex-direction: row;
+            gap: 3px;    
+            flex-wrap: wrap;
+        }
+        .bullet-points li::before {
+            content: "● ";
+            /* content: " | "; */
+            color: #e5e5e5;
+        }
+
+
+.preview-on-website{
+    display: none;
+}
 
 /********************************
 * *media queries
@@ -287,8 +352,15 @@ html {
         background-color: var(--body-background-color);
     }
     #resume {
-        width: 793px;
-        margin: 80px auto;
+        /* width of A4 */
+        /* width: 210mm; */
+        /* height of letter */
+        /* height: 279.4mm; */
+        /* convert 210mm --> 793.7px */
+        /* convert 279.4mm --> 1056px */
+        /* width: 793.7px;
+        height: 1056px;  */
+        margin-top: 80px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
 
     }
@@ -324,16 +396,3 @@ html {
 
 
 
-
-/********************************
-* *animation
-*********************************/
-/* this animation is made for dev only. remove in production*/
-@keyframes clarity {
-    from{
-        background-color: var(--section-bg);
-    }
-    to{
-        background-color: white;
-    }
-}
