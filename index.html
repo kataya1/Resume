@@ -31,12 +31,13 @@
                 </div>
                 <div id="info">
                     <h1 id="name">Mohamed 'Kataya' Abd-Ellatif</h1>
-                    <h2 id="job-title">Full-Stack Software Engineer</h2>
+                    <h2 id="job-title">Full-stack Software Engineer</h2>
                     <ul id="contacts">
                         <li id="mail"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                                <path d="M0 0h24v24H0z" fill="none" /></svg> moe.kataya1@gmail.com
+                                <path d="M0 0h24v24H0z" fill="none" />
+                            </svg> moe.kataya1@gmail.com
                         </li>
                         <li id="phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 384 " x="0px" y="0px"
                                 xml:space="preserve">
@@ -117,80 +118,247 @@
                 <!-- legend has a span inside because there is a weired 2px padding on the right for text -->
                 <legend class="section-title"><span class="pl-2px">EDUCATION</span></legend>
 
-                <div class="edu-div"><span class="event-name">Information Technology Institute</span> <span class="event-context">Diploma in Full Stack Development</span> <br>
-                <span class="event-date">July - Nov</span> <span class="event-location">Alexandria, Egypt</span>
+
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">Information Technology Institute</span> <span
+                            class="event-context">Full Stack Development Intensive Bootcamp</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">Alexandria, Egypt</span>
+                        <span class="event-date">15 July - 30 Nov 2021</span>
+                    </div>
                 </div>
-                <div class="edu-div"><span class="event-name">Alexandria University</span> <span class="event-context">B.Sc. in Computer
-                        and Communication Engineering</span> <br>
-                    <span class="event-date">class of 2020</span> <span class="event-location">Alexandria, Egypt</span>
+
+
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">Alexandria University</span>
+                        <span class="event-context">B.Sc. in Computer
+                            and Communication Engineering</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">Alexandria, Egypt</span>
+                        <span class="event-date">May 2020</span>
+                    </div>
                 </div>
+
 
             </fieldset>
             <fieldset id="projects">
                 <legend class="section-title"><span class="pl-2px">PROJECTS</span></legend>
-                <section><div class="project-title">GoogleNet CNN</div>
-                    A deep convolutional neural network for CIFAR image classification using inception architecture.
-                    Solo project. using Pytorch. </section>
-                <section >
-                    <div class="project-title"><a href="https://github.com/kataya1/a-game-story">Game story</a></div>
-                    StoryGUI — A 3d Game Story Teller
-                    story coding and user interface part of a 3D game. Solo. Languages used: C#, ShaderLab.
-                </section>
-                <section >
-                    <div class="project-title">Flappy Bird Online</div>  
-                    A multiplayer flappy bird game using tcp/udp sockets for peer discovery and host-player connection.
-                    Solo. Languages used: Python, C#.</section>
-                <section >
-                    <div class="project-title">Fooddie</div>
-                    A Food reservation APP for a Startup. languages used: XML, Java, SQLite (No Link because the code is
-                    private). Independent project.</section>
-                <section >
-                    <div class="project-title">This Resume</div>
-                    This Resume is a program, languages user: html, css</section>
-                <section >
-                    <div class="project-title">Pinterest</div>
-                    A Food reservation APP for a Startup. languages used: XML, Java, SQLite (No Link because the code is
-                    private). Independent project.</section>
+                <div id="project-grid">
+                    <section>
+                        <div class="project-title"><a href="https://kataya1.com">My Résumé</a></div>
+                        <p>
+                            This Resume is a Website, it's both responsive and made so it can fit inside a
+                            single page of A4 or letter when printed.
+                            Tech used: <b>HTML, CSS.</b>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="project-title"><a href="https://github.com/kataya1/Casting-Agency">Casting
+                                Agency</a></div>
+                        <p>
+                            An app that's responsible for creating movies and managing and assigning actors to those
+                            movies.
+                            Tech used: <b>JWT, OpenID, OAuth2, Auth0, Flask, SqlAlchemy, PostgreSQL</b>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="project-title"><a href="https://kataya1.github.io/movie_website_landing_page/">A
+                                movie website landing age</a></div>
+                        <p>
+                            A Responsive landing page for a movie website. Tech used: <b>HTML, CSS, JS, Google
+                                Lighthouse</b>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="project-title"><a href="https://github.com/kataya1/Pinterest">Pinterest</a></div>
+                        <p>
+                            A Pinterest clone Website. Tech used: <b>React, Django, PostgreSQL, CSS, Postman, Tokens
+                            </b>
+                        </p>
+                    </section>
+
+                    <section>
+                        <div class="project-title"><a href="https://github.com/kataya1/Oil-Paint-it">Oil-Paint-it</a>
+                        </div>
+                        <p>
+                            Convert an input image into an oil painting.
+                            Tech used:<b> Python, OpenCV, Matplotlib, Numpy.</b>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="project-title"><a href="https://github.com/kataya1/a-game-story">FPS Game</a></div>
+                        <p>
+                            Story coding and user interface part of a 3D game. Tech used:<b> C#, Unity3D, Blender,
+                                ShaderLab</b>
+                        </p>
+                    </section>
+                </div>
+                <div class="foot-note">Titles are links to the project's repo or website.</div>
             </fieldset>
-            <section class="hide-on-print">
+            <!-- <section class="hide-on-print">
                 hide-on-print
-            </section>
+            </section> -->
             <fieldset id="skills">
                 <legend class="section-title"><span class="pl-2px">SKILLS</span></legend>
                 <section>
-                    <header class="bullets-title">programming lang</header>
                     <ul class="bullet-points">
-                        <li>python</li>
-                        <li>html</li>
-                        <li>css</li>
-                        <li>js</li>
-                        <li>sql</li>
+                        <header class="bullets-title">Programming Languages</header>
+                        <b class="bullet-separator">Proficient:</b>
+                        <li>Python</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <b class="bullet-separator">Familiar:</b>
+                        <li>C</li>
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>Shell</li>
                     </ul>
                 </section>
                 <section>
-                    <header class="bullets-title">Tools and frameworks</header>
                     <ul class="bullet-points">
-                        <li>git</li>
-                        <li>linux</li>
-                        <li>aws</li>
-                        <li>heroku</li>
-                        <li>sqlalchemy</li>
+                        <header class="bullets-title">Back-end</header>
+                        <li>Django</li>
+                        <li>Flask</li>
+                        <li>NodeJS</li>
+                        <li>PostgreSQL, SQLite</li>
+                        <li>MongoDB</li>
+                        <li>RESTful API</li>
+                        <li>Containerization</li>
+                        <li>CI/CD</li>
                     </ul>
                 </section>
                 <section>
-                    <header class="bullets-title">knowledge in</header>
                     <ul class="bullet-points">
+                        <header class="bullets-title">Front-end</header>
+                        <li>React(with Hooks)</li>
+                        <li>Responsive Design</li>
+                        <li>Bootstrap</li>
+                        <li>Performance Optimization</li>
+                        <li>Adobe XD</li>
+                        <li>UI/UX</li>
+                    </ul>
+                </section>
+                <section>
+                    <ul class="bullet-points">
+                        <header class="bullets-title">Tools</header>
+                        <li>Git & Github</li>
+                        <li>Red Hat System Admin</li>
+                        <li>AWS (EC2, EKS)</li>
+                        <li>Heroku</li>
+                        <li>Postman</li>
+                        <li>Docker</li>
+                        <li>Pytorch</li>
+                        <li>Lighthouse</li>
+                    </ul>
+                </section>
+                <section>
+                    <ul class="bullet-points">
+                        <header class="bullets-title">Concepts</header>
                         <li>Algorithms</li>
-                        <li>DataStructures</li>
+                        <li>Data structures</li>
+                        <li>Database Design</li>
                         <li>OOP</li>
-                        <li>Databases</li>
                         <li>Machine learning</li>
+                        <li>Documentation</li>
+                        <li>Unit Testing</li>
+
                     </ul>
                 </section>
             </fieldset>
+            <fieldset id="EXPERIENCE">
+                <legend class="section-title"><span class="pl-2px">Experience</span></legend>
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">Informatics Research Institute</span>
+                        <span class="event-context">Research Assistant</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">Alexandria, Egypt</span>
+                        <span class="event-date">May 2019 - July 2019</span>
+                    </div>
+                    <span class="event-description">Responsible for designing, training, and video graphing a machine
+                        learning model under a professor in
+                        Reinforcement and imitation learning applications for a student research paper. Tech used: unity
+                        3d, tensor flow.</span>
+                </div>
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">SportsLane co.</span>
+                        <span class="event-context">Intern</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">New York, United States</span>
+                        <span class="event-date">July 2016 - Sept 2016</span>
+                    </div>
+                    <span class="event-description">Responsible for Maintaining a MySQL database and Documenting a C++
+                        Program. Tech used: MySQL, C++, Access.</span>
+                </div>
+            </fieldset>
+
+            <fieldset id="AWARDS">
+                <legend class="section-title"><span class="pl-2px">Awards & Leadership</span></legend>
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">ITI</span>
+                        <span class="event-context">Team Leader</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">Alexandria, Egypt</span>
+                        <span class="event-date">Nov 2021</span>
+                    </div>
+                    <span class="event-description">Lead a team of 6 in the Information Technology Institute's
+                        graduation project </span>
+                </div>
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">NASA SPACE APPS</span>
+                        <span class="event-context">2ND place winner</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-location">Alexandria, Egypt</span>
+                        <span class="event-date">May 2019</span>
+                    </div>
+                    <span class="event-description">The local winner out of 38 teams for “best software solution”.
+                        Responsible for
+                        making a game using Hubble Space Telescope images</span>
+                </div>
+            </fieldset>
+            <fieldset id="COURSES">
+                <legend class="section-title"><span class="pl-2px">COURSES</span></legend>
+                <div class="courses-grid">
+                    <section>
+                        <header class="bullets-title">Syllabus</header>
+                        <ul class="normal-list">
+                            <li>Operating systems (A)</li>
+                            <li>Systems Programming (A)</li>
+                            <li>Distributed systems (B+)</li>
+                            <li>Database Systems (B+)</li>
+                            <li>Algorithms and Data Structures (B)</li>
+                            <li>Computer Networks (A+)</li>
+                            <li>Computer and Network Security (A-)</li>
+
+                        </ul>
+                    </section>
+                    <section>
+                        <header class="bullets-title">Online</header>
+                        <ul class="normal-list">
+                            <li>MAC FullStack Web development full Scholarship</li>
+                            <li>MIT deep learning intensive course</li>
+                            <li>HarvardX web development</li>
+                            <li>MAC Android basic Scholarship </li>
+                        </ul>
+                    </section>
+                </div>
+            </fieldset>
+
         </div>
     </div>
-   
 </body>
 
 </html>

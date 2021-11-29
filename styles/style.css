@@ -12,14 +12,15 @@
     --font-family: Calibri; */
     --bg: white;
     --section-bg: #e5e5e5;
-    --accent: tomato;
+    --accent: steelblue;     
     --dark-font-color: black;
     --font-color: #656565;
     --section-font-color: black;
     --link-color: #5a95f5;
-    --big-name: black;
+    --big-name: steelblue;
     --body-background-color: #e5e5e5;
     --body-shadow-alpha: 0.2;
+    --frame-color: lightsteelblue;
 
     --font-family: Calibri;
     font-size: 14px;
@@ -61,8 +62,10 @@ html {
     /* convert 279.4mm --> 1056px */
     width: 210mm;
     height: 279.4mm;
+    max-width: 100%;
     /* i've added those custome dimmension to chrome and firefox because of this problem ⫷#resume is not body so when you make media querry engage on size of body and not size of #resume⫸*/
-    overflow: auto;
+    overflow: hidden;
+    
     font-family: var(--font-family);
 }
 
@@ -83,11 +86,8 @@ html {
     #profile-pic-frame {
         height: 8em;
         width: 8em;
-        border-radius: 50%;
-        background-color: gray;
-        /* clip-path: polygon(31.08% 3.57%, 67.13% 1.78%, 97.32% 29.29%, 97.32% 68.03%, 69.82% 97.32%, 27.51% 97.32%, 2.68% 70.71%, 2.68% 29.29%);
-        clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%); */
-        clip-path: polygon(29.289322% 3%, 70.710672% 3%, 97% 29.289322%, 97% 70.710672%, 70.710672% 97%, 29.289322% 97%, 3% 70.710672%, 3% 29.289322%);
+        background-color: var(--frame-color);
+        clip-path: polygon(29.289322% 0%, 70.710672% 0%, 100% 29.289322%, 100% 70.710672%, 70.710672% 100%, 29.289322% 100%, 0% 70.710672%, 0% 29.289322%);
         display: grid;
         place-content: center;
 
@@ -123,13 +123,13 @@ html {
         #job-title,
         #contacts {
             color: var(--font-color);
-            font-family: Raleway;
+            font-family: "Helvetica Neue";
             margin: 5px;
         }
 
         #job-title {
             font-size: 17px;
-            color: var(--accent);
+            color: var(--font-color);
         }
 
         #contacts {
@@ -188,11 +188,13 @@ html {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-areas: 
-        "education  skills"
+        "education education"
         "projects projects"
-        ". ." ;
+        "skills skills"
+        "exp exp"
+        "aw courses";
 
     /* grid-template-columns: repeat( auto-fit, minmax()); */
     
@@ -206,16 +208,19 @@ html {
     #skills{
         grid-area: skills
     }
-
-
-    /* .resume-body li::before {
-        content: "● ";
-        /* content: "| "; 
-    } */
-
+    #EXPERIENCE{
+        grid-area: exp
+    }
+    #AWARDS{
+        grid-area: aw
+    }
+    #COURSES{
+        grid-area: courses;
+    }
 
     section, fieldset {
         /* when */
+        position: relative;
         color: var(--section-font-color);
         /* width: fit-content; */
         height: fit-content;
@@ -233,7 +238,7 @@ html {
         legend{
             padding: 0 5px;
             position: relative;
-            margin-left:2em;
+            /* margin-left:2em; */
             /* margin:auto; */
             padding-bottom:0.5em;
             /* font-size: 90%; */
@@ -266,48 +271,82 @@ html {
         letter-spacing: 0.3ch;
     }
 
-    .event-name, .event-context, .event-location{
+
+    .event-container{
+        width: fit-content;
+        display: grid;
+        grid-template-columns: fit-content 1fr;
+        grid-template-rows: 1fr 1fr 1fr fit-content;
+        grid-template-areas: 
+        "nc nc"
+        "spacetime spacetime"
+        "description description";
+        gap: 3px;
+        align-items: baseline;
+    }
+    .event-container:not(:last-child){
+        margin-bottom: 10px;
+    }
+
+    .event-namecontext{
+        grid-area: nc;
+    }
+    .event-description{
+        grid-area: description;
+    }
+    .event-spacetime{
+        grid-area: spacetime;
+
+    }
+    .event-spacetime{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* align-items: center; */
+        /* justify-content: end; */
+    }
+    /* .event-spacetime > *{
+        flex-grow: 1;
+    } */
+    /* .event-name, .event-context, .event-location{
         font-family: Merriweather, 'Times New Roman', Times, serif;
+    } */
+    .event-namecontext{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 5px;
     }
     .event-name {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         /* padding-top: 10px; */
         display: inline-block;
-        margin-top: 10px;
+        
     }
 
     .event-context {
-        font-weight: 500;
-        margin-left: 7px;
+        font-weight: 800;
+        color: var(--accent)
     }
 
-    .event-date {
-        font: 100;
-        font-family: "Open Sans" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    .event-location {
-        margin-left: 7px;
-        font-weight: 300;
-    }
-    #EDUCATION{
+    /* .event-date {
+    } */
+    /* .event-location {
+        /* margin-left: 7px; 
+    } */
+    /*#EDUCATION{
         /* display: flex;
-        flex-direction: column; */
-        /* gap: 5px; */
-    }
-        .edu-div{
-            /* width: fit-content; */
-            /* margin: auto; */
-            margin: 5px 0px
-        }
-            .edu-div span{
-                /* padding: 10px; */
-                line-height: 1.5rem;
-            }
-    #projects{
+        flex-direction: column; 
+        /* gap: 5px; 
+    }*/
+
+    #project-grid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: fit-content fit-content;
         gap: 5px;
-
     }
         .project-title, .bullets-title{
             font-size: 1.05rem;
@@ -315,28 +354,61 @@ html {
             font-weight: bold;
             text-align: start;
             margin-bottom: 3px;
-               
+            padding-right: 1rem;
         }
+        
+        #projects  p{
+            text-justify: auto;
+            text-align: justify;
+        }
+/* 
     #skills{
 
-    }
+    } */
         section .bullet-points{
-            display: flex;
+            display: inline-flex;
+            align-items: baseline;
             flex-direction: row;
             gap: 3px;    
             flex-wrap: wrap;
         }
         .bullet-points li::before {
-            content: "● ";
+            content: "◈ ";
             /* content: " | "; */
-            color: #e5e5e5;
+            /* color: #e5e5e5; */
+        }
+        .bullets-title{
+            display: inline;
         }
 
 
+    .courses-grid{
+        display: flex;
+        gap: 10px;
+    }
+    #COURSES ul{
+        list-style-type: disc;
+        word-wrap: break-word;
+    }
 .preview-on-website{
     display: none;
 }
 
+b{
+    font-weight: bold
+}
+.bullet-separator:not(:first-child){
+    margin-left: 10px;
+}
+
+.foot-note{
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    font-size: x-small;
+    color: gray;
+    text-align: end
+}
 /********************************
 * *media queries
 *********************************/
@@ -361,10 +433,15 @@ html {
         /* width: 793.7px;
         height: 1056px;  */
         margin-top: 80px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
+        /* overflow: hidden; */
 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
     }
+
 }
+
+
+
 
 @media only screen and (max-width: 350px) {
     #contacts {
