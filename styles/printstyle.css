@@ -4,6 +4,7 @@
         /* height: 100vh; */
         /* i don't know if i should remove the padding or not */
         /* padding: 0; */
+        overflow: hidden;
     }
     .hide-on-print {
         display: none;

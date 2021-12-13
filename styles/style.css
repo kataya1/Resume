@@ -64,7 +64,7 @@ html {
     height: 279.4mm;
     max-width: 100%;
     /* i've added those custome dimmension to chrome and firefox because of this problem ⫷#resume is not body so when you make media querry engage on size of body and not size of #resume⫸*/
-    overflow: hidden;
+    /* overflow: hidden; */
     
     font-family: var(--font-family);
 }
@@ -188,7 +188,7 @@ html {
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 3fr));
     grid-template-areas: 
         "education education"
         "projects projects"
@@ -344,7 +344,7 @@ html {
 
     #project-grid{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-template-rows: fit-content fit-content;
         gap: 5px;
     }
@@ -384,11 +384,18 @@ html {
 
     .courses-grid{
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
     }
+    .courses-grid section{
+        flex: 1 1 150px;
+    }
     #COURSES ul{
-        list-style-type: disc;
+        list-style-type: none;
         word-wrap: break-word;
+    }
+    #COURSES ul li::before{
+        content: "◈ ";
     }
 .preview-on-website{
     display: none;
@@ -439,11 +446,21 @@ b{
     }
 
 }
+@media only screen and (max-width: 600px){
+    .resume-body{
+        grid-template-areas: 
+        "education education"
+        "projects projects"
+        "skills skills"
+        "exp exp"
+        "aw aw"
+        "courses courses";
+    }
+}
 
 
 
-
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 550px) {
     #contacts {
         flex-direction: column;
         align-items: center;
