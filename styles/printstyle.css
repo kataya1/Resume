@@ -5,6 +5,7 @@
         /* i don't know if i should remove the padding or not */
         /* padding: 0; */
         overflow: hidden;
+        margin: 0;
     }
     .hide-on-print {
         display: none;

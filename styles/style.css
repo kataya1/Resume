@@ -34,7 +34,7 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -444,6 +444,7 @@ b{
         /* width: 793.7px;
         height: 1056px;  */
         margin-top: 80px;
+        margin-bottom: 80px;
         /* overflow: hidden; */
 
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
