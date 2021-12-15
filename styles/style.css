@@ -344,7 +344,7 @@ html {
 
     #project-grid{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(195px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(190px, 90%),1fr));
         grid-template-rows: fit-content fit-content;
         gap: 5px;
     }
