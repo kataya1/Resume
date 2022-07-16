@@ -429,9 +429,9 @@ b{
 @media only screen and (min-width: 793px) {
     body{
         background-color: var(--body-background-color);
-        background-image: radial-gradient( circle farthest-corner at 28% 25%,  #E4E5E6 0%, #00416A 80% ); 
+        /* background-image: radial-gradient( circle farthest-corner at 28% 25%,  #E4E5E6 0%, #00416A 80% ); 
         background-repeat: no-repeat;
-        background-attachment:fixed ;
+        background-attachment:fixed ; */
         
     }
     #resume {
