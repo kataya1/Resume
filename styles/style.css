@@ -23,7 +23,7 @@
     --frame-color: lightsteelblue;
 
     --font-family: Calibri;
-    font-size: 14px;
+    font-size: 13px;
     --website-start-size: 992px;
     --mobile-start-size: 350px;
 }
@@ -61,7 +61,7 @@ html {
     /* convert 210mm --> 793.7px */
     /* convert 279.4mm --> 1056px */
     width: 210mm;
-    height: 279.4mm;
+    /* height: 279.4mm; */
     max-width: 100%;
     /* i've added those custome dimmension to chrome and firefox because of this problem ⫷#resume is not body so when you make media querry engage on size of body and not size of #resume⫸*/
     /* overflow: hidden; */
