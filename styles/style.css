@@ -22,8 +22,8 @@
     --body-shadow-alpha: 0.2;
     --frame-color: lightsteelblue;
 
-    --font-family: Calibri;
-    font-size: 13px;
+    --font-family: Arial;
+    font-size: 12px;
     --website-start-size: 992px;
     --mobile-start-size: 350px;
 }
@@ -246,7 +246,7 @@ svg {
 }
 
 section,
-fieldset {
+.fieldset {
     /* when */
     position: relative;
     color: var(--section-font-color);
@@ -303,7 +303,7 @@ legend span.pl-2px {
 
 
 .event-container {
-    width: fit-content;
+    /* width: fit-content; */
     display: grid;
     grid-template-columns: fit-content 1fr;
     grid-template-rows: 1fr 1fr 1fr fit-content;
@@ -336,10 +336,9 @@ legend span.pl-2px {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    column-gap: 10px;
     /* align-items: center; */
-    /* justify-content: end; */
+    justify-content: space-between;
 }
 
 /* .event-spacetime > *{
@@ -372,8 +371,10 @@ legend span.pl-2px {
     font-style: italic;
 }
 
-/* .event-date {
-    } */
+.event-date {
+    font-weight: bold;
+}
+
 /* .event-location {
         /* margin-left: 7px; 
     } */
@@ -514,6 +515,10 @@ b {
             "exp exp"
             "aw aw"
             "courses courses";
+    }
+
+    .event-container {
+        width: fit-content;
     }
 
     .courses-grid {
