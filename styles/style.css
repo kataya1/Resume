@@ -22,10 +22,11 @@
     --body-shadow-alpha: 0.2;
     --frame-color: lightsteelblue;
 
-    --font-family: Arial;
+    --font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     --website-start-size: 992px;
     --mobile-start-size: 350px;
+
 }
 
 * {
@@ -87,7 +88,7 @@ html {
 * *header
 *********************************/
 #header-container {
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
 #resume-header {
@@ -157,6 +158,7 @@ html {
     font-weight: 600;
     list-style-type: none;
     justify-content: center;
+    align-items: baseline;
 }
 
 ul {
@@ -208,13 +210,13 @@ svg {
     /* there might be more than one resume body, more than one page but only one resume header that's why its a class */
     /* maybe the resume is display grid and  header and body are it's only two components  */
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(1fr, 3fr));
     grid-template-areas:
         "education education"
+        "exp exp"
         "skills skills"
         "projects projects"
-        "exp exp"
         "aw courses";
 
     /* grid-template-columns: repeat( auto-fit, minmax()); */
@@ -259,22 +261,42 @@ section,
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-fieldset {
-    border-top: 2px solid black;
+.skill-section {
+    padding: 0;
+    margin: 3px
 }
 
-legend {
+.fieldset {
+    /* padding-top: 1.4rem; */
+    /* border-top: 2px solid black; */
+}
+
+.legend {
     padding: 0 5px;
     position: relative;
     /* margin-left:2em; */
     /* margin:auto; */
-    padding-bottom: 0.5em;
+    margin-bottom: 1rem;
     /* font-size: 90%; */
+
 }
 
-legend span.pl-2px {
+.legend::before {
+    width: -webkit-fill-available;
+    height: 2px;
+    content: " ";
+    position: absolute;
+    background-color: black;
+    left: 0;
+    bottom: 3px;
+}
+
+span.pl-2px {
     /*  there is a weired margin after the text in legend. the text doesn't look in the center*/
-    padding-left: 2px;
+    position: relative;
+    padding: 0px 5px 0px 8px;
+    font-size: 1.4rem;
+    background-color: white;
 }
 
 /* legend::before, legend::after{
@@ -308,11 +330,12 @@ legend span.pl-2px {
     grid-template-columns: fit-content 1fr;
     grid-template-rows: 1fr 1fr 1fr fit-content;
     grid-template-areas:
-        "nc nc"
         "spacetime spacetime"
+        "nc nc"
         "description description";
     gap: 3px;
     align-items: baseline;
+    line-height: 1.15;
 }
 
 .event-container:not(:last-child) {
@@ -351,19 +374,21 @@ legend span.pl-2px {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 5px;
+    column-gap: 15px;
+    row-gap: 5px;
 }
 
 .event-name {
-    font-size: 1.5rem;
-    /* padding-top: 10px; */
     display: inline-block;
-
+    font-weight: 800;
+    color: var(--accent)
 }
 
 .event-context {
-    font-weight: 800;
-    color: var(--accent)
+    /* font-size: 1.3rem; */
+    /* padding-top: 10px; */
+    font-weight: 700;
+    font-size: larger;
 }
 
 .job-specification {
@@ -372,7 +397,14 @@ legend span.pl-2px {
 }
 
 .event-date {
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     font-weight: bold;
+
+}
+
+.event-date-sameline {
+    flex-grow: 1;
+    text-align: end;
 }
 
 /* .event-location {
@@ -419,6 +451,7 @@ section .bullet-points {
 }
 
 .bullet-points li::before {
+    /* content: " "; */
     content: "◈ ";
     /* content: " | "; */
     /* color: #e5e5e5; */
@@ -450,6 +483,14 @@ section .bullet-points {
 
 .preview-on-website {
     display: none;
+}
+
+.display-on-website {
+    display: none
+}
+
+.display-on-mobile {
+    display: block
 }
 
 b {
@@ -504,7 +545,16 @@ b {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
     }
 
+    .display-on-website {
+        display: block;
+    }
+
+    .display-on-mobile {
+        display: none;
+    }
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .resume-body {
@@ -521,6 +571,10 @@ b {
         width: fit-content;
     }
 
+    .event-spacetime {
+        justify-content: flex-start;
+    }
+
     .courses-grid {
         flex-direction: column;
 
@@ -528,6 +582,10 @@ b {
 
     .courses-grid section {
         flex: 1;
+    }
+
+    .display-on-mobile {
+        display: block;
     }
 }
 
@@ -548,6 +606,10 @@ b {
 @media only screen and (min-width: 992px) {
     .preview-on-website {
         display: contents;
+    }
+
+    .display-on-website {
+        display: block;
     }
 }
 

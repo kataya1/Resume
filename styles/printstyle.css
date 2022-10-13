@@ -1,5 +1,5 @@
-@media print{
-    #resume{
+@media print {
+    #resume {
         width: auto;
         /* height: 100vh; */
         /* i don't know if i should remove the padding or not */
@@ -7,17 +7,27 @@
         overflow: hidden;
         margin: 0;
     }
+
     .hide-on-print {
         display: none;
     }
-/* let's experement by making the padding 0 and the margin 0.5inch */
-    
+
+    .display-on-website {
+        display: block;
+    }
+
+    .display-on-mobile {
+        display: none
+    }
+
+    /* let's experement by making the padding 0 and the margin 0.5inch */
+
 }
 
- @page {
-     /* don't know i shoud have this */
-    margin: 0; 
- /* this removes the page size option from chrome    */
+@page {
+    /* don't know i shoud have this */
+    margin: 0;
+    /* this removes the page size option from chrome    */
     /* size: A4; */
     /* scale: None; */
-} 
+}
