@@ -1,3 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+
 .print-button{
     position: fixed;
     bottom: 20px;
@@ -12,3 +30,121 @@
     border-radius: 5px;
     box-shadow: 1px 1px 7px #0002;
 }
+
+/********************************
+* *media queries
+*********************************/
+
+/* change the margins as you want them to be. */
+/* might use javascript */
+
+@import "styles/printstyle.css" print;
+
+
+@media only screen and (min-width: 793px) {
+    body {
+        background-color: var(--body-background-color);
+        /* background-image: radial-gradient( circle farthest-corner at 28% 25%,  #E4E5E6 0%, #00416A 80% ); 
+        background-repeat: no-repeat;
+        background-attachment:fixed ; */
+
+    }
+
+    #resume {
+        /* width of A4 */
+        /* width: 210mm; */
+        /* height of letter */
+        /* height: 279.4mm; */
+        /* convert 210mm --> 793.7px */
+        /* convert 279.4mm --> 1056px */
+        /* width: 793.7px;
+        height: 1056px;  */
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha)); */
+
+        /* overflow: hidden; */
+        animation: fade-in 0.3s ease-out 0.2s 1 forwards;
+        margin: 80px auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, var(--body-shadow-alpha)), 0 6px 20px 0 rgba(0, 0, 0, var(--body-shadow-alpha));
+        padding: 0.25in;
+     
+
+    }
+
+    .display-on-website {
+        display: block;
+    }
+
+    .display-on-mobile {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .resume-body {
+        grid-template-areas:
+            "education education"
+            "projects projects"
+            "skills skills"
+            "exp exp"
+            "aw aw"
+            "courses courses";
+    }
+
+    .event-container {
+        width: fit-content;
+    }
+
+    .event-spacetime {
+        justify-content: flex-start;
+    }
+
+    .courses-grid {
+        flex-direction: column;
+
+    }
+
+    .courses-grid section {
+        flex: 1;
+    }
+
+    .display-on-mobile {
+        display: block;
+    }
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    /* #contacts {
+        /* flex-direction: column;
+        align-items: center; 
+        justify-content: flex-start;
+    } */
+
+    .show-on-mobile {
+        display: contents;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .preview-on-website {
+        display: contents;
+    }
+
+    .display-on-website {
+        display: block;
+    }
+}
+
+/* @page {
+     margin: 0; 
+/* this removes the page size option from chrome  
+    size: A4;
+} */
+
+
+/********************************
+* *fonts
+*********************************/

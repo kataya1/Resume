@@ -1,11 +1,12 @@
-@media print {
+@media print{
     #resume {
         width: auto;
         /* height: 100vh; */
-        /* i don't know if i should remove the padding or not */
-        /* padding: 0; */
+        /* i don't know if i should remove the padding or not (2023 upade use padding to simulate print margins, so yes remove it)*/ 
+
         overflow: hidden;
         margin: 0;
+        padding: 0 ;
     }
 
     .hide-on-print {
@@ -26,8 +27,10 @@
 
 @page {
     /* don't know i shoud have this */
-    margin: 0;
+    /* margin: 0; */
+    margin: clamp(0.25in, 0.25in , 0.5in);
     /* this removes the page size option from chrome    */
-    /* size: A4; */
+    /* size: Letter; */
     /* scale: None; */
+    -webkit-print-color-adjust: exact !important;
 }

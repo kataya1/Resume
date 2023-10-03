@@ -13,7 +13,12 @@ color: red;
     
 }
 
+#resume{
+        /* 2023oct3 padding simulates the print margin, padding will be removed on print so that the printer will have it's own margin 0.25 inch is a safe margin*/
+        padding: 0.25in; 
 
+        
+}
 /********************************
 * *DEV 
 *********************************/
