@@ -52,7 +52,7 @@
     /* overflow: hidden; */
 
     font-family: var(--font-family);
-    padding: 1%;
+    padding: 4%;
 }
 
 @keyframes fade-in {
@@ -118,7 +118,7 @@
     color: var(--big-name);
     font-family: "Helvetica Neue";
     font-size: 32px;
-    margin: 7px 5px;
+    margin: 0px ;
 }
 
 #job-title,
@@ -201,8 +201,9 @@ svg {
         "exp exp"
         "skills skills"
         "projects projects"
-        "aw courses";
-
+        "aw aw"
+        "courses courses";
+        
     /* grid-template-columns: repeat( auto-fit, minmax()); */
 
 }
@@ -254,33 +255,46 @@ section,
     /* padding-top: 1.4rem; 
     /* \\border-top: 2px solid black; 
 } */
-
+.legend:first-of-type{
+    margin-top: 3px;
+}
 .legend {
     padding: 0 5px;
     position: relative;
     /* margin-left:2em; */
     /* margin:auto; */
-    margin-bottom: 1rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
     /* font-size: 90%; */
-
 }
 
-.legend::before {
-    width: -webkit-fill-available;
+hr{
+    border-top: 1.5px solid black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 3px;
+    z-index: 1;
+}
+
+/* .legend::before {
+        width: -webkit-fill-available;
     height: 2px;
     content: " ";
     position: absolute;
     background-color: black;
     left: 0;
     bottom: 3px;
-}
+} */
 
 span.pl-2px {
     /*  there is a weired margin after the text in legend. the text doesn't look in the center*/
     position: relative;
-    padding: 0px 5px 0px 8px;
+    padding: 0px 5px 2px 8px;
     font-size: 1.4rem;
     background-color: white;
+    z-index: 2;
+
 }
 
 /* legend::before, legend::after{
@@ -403,7 +417,8 @@ span.pl-2px {
 #project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(190px, 90%), 1fr));
-    grid-template-rows: fit-content fit-content;
+    grid-template-rows: fit-content;
+    /* grid-auto-flow: dense; */
     gap: 5px;
 }
 
@@ -414,29 +429,33 @@ span.pl-2px {
     font-weight: bold;
     text-align: start;
     margin-bottom: 3px;
-    padding-right: 1rem;
+    padding-right: 5px;
 }
 
 #projects p {
     text-justify: auto;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 /* 
     #skills{
 
     } */
+.skill-section div span::before {
+content: "- ";
+}
 section .bullet-points {
     display: inline-flex;
     align-items: baseline;
     flex-direction: row;
-    gap: 3px;
+    /* gap: 3px; */
+    column-gap: 3px;
     flex-wrap: wrap;
 }
 
 .bullet-points li::before {
-    /* content: " "; */
-    content: "◈ ";
+    content: "- ";
+    /* content: "◈ "; */
     /* content: " | "; */
     /* color: #e5e5e5; */
 }
@@ -453,16 +472,28 @@ section .bullet-points {
 }
 
 .courses-grid section {
-    flex: 1 1 150px;
+    /* flex: 1 1 150px; */
 }
 
 #COURSES ul {
-    list-style-type: none;
+    /* list-style-type: none; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: "- ";
+    /* list-style-type: disc; */
+    /* list-style-type: ","; */
     word-wrap: break-word;
+    column-gap: 3px;
 }
+/* #COURSES ul li::marker {
+    content: ;
+    margin-right: 0;
+    
+} */
 
-#COURSES ul li::before {
-    content: "◈ ";
+#COURSES span span::before {
+    content: " ";   
 }
 
 .preview-on-website {
@@ -481,7 +512,7 @@ b {
     font-weight: bold
 }
 
-.bullet-separator:not(:first-child) {
+.bullet-separator:not(:first-of-type) {
     margin-left: 10px;
 }
 

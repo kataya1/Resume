@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/secondary.css" async>
     <link rel="stylesheet" href="styles/firefoxfont.css" async>
     <link rel="stylesheet" media="print" href="styles/printstyle.css" defer>
-    <!-- <link rel="stylesheet" href="styles/dev.css"> comment this in production -->
+    <!-- <link rel="stylesheet" href="styles/dev.css">  comment this in production -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@300;600&display=swap"
         defer crossorigin>
 
@@ -39,7 +39,7 @@
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                                 <path d="M0 0h24v24H0z" fill="none" />
-                            </svg> moe.kataya1@gmail.com
+                            </svg> mohamed@kataya1.com
                         </li>
                         <li id="phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 384 " x="0px" y="0px"
                                 xml:space="preserve">
@@ -99,7 +99,7 @@
                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
-                                </svg><span class="show-on-website show-on-mobile show-now"> /in/kataya1</span></a></li>
+                                </svg><span class="show-on-website show-on-mobile show-now">/kataya1</span></a></li>
                         <!-- <li id="facebook"><a href="https://facebook.com"><svg class="facebook" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -121,9 +121,21 @@
         <div class="resume-body">
             <div class="fieldset" id="EDUCATION">
                 <!-- legend has a span inside because there is a weired 2px padding on the right for text -->
-                <div class="section-title legend"><span class="pl-2px">EDUCATION</span></div>
+                <div class="section-title legend"><span class="pl-2px">EDUCATION</span>
+                    <hr>
+                </div>
 
 
+                <div class="event-container">
+                    <span class="event-namecontext">
+                        <span class="event-name">Cooper Union</span>
+                        <span class="event-location">NewYork, USA</span>
+                    </span>
+                    <div class="event-spacetime">
+                        <span class="event-context">Retraining Program for Immigrant Engineers</span>
+                        <span class="event-date">Aug – Dec 2023</span>
+                    </div>
+                </div>
                 <div class="event-container">
                     <span class="event-namecontext">
                         <span class="event-name">Information Technology Institute</span>
@@ -150,20 +162,24 @@
 
             </div>
             <div class="fieldset" id="EXPERIENCE">
-                <div class="section-title legend"><span class="pl-2px">Work Experience</span></div>
+                <div class="section-title legend"><span class="pl-2px">Work Experience</span>
+                    <hr>
+                </div>
+
                 <div class="event-container">
                     <span class="event-namecontext">
-                        <span class="event-name">OpenAI</span>
-                        <span class="event-location">New York, USA</span>
+                        <span class="event-name">Various(OpenAI, Anthropic, Alphabet)</span>
+                        <span class="event-location">New York, USA(Remote)</span>
                         <!-- <span class="event-date event-date-sameline display-on-website">
                             Dec 2021 - present
                         </span> -->
                     </span>
                     <div class="event-spacetime">
-                        <span class="event-context">Software Engineer(hourly)</span>
+                        <span class="event-context">AI Coding Trainer</span>
                         <span class="event-date">Dec 2021 – present</span>
                     </div>
-                    <span class="event-description">Responsible for fine-tuning a Language model. Tech used: Python,
+                    <span class="event-description">Responsible for fine-tuning Language models to be more helpful,
+                        honest and harmless, Specifically training AI to assist coders. Tech used: Python,
                         NLP, Data structures and Algorithms, Typescript, Broad knowledge.</span>
                 </div>
                 <div class="event-container">
@@ -196,10 +212,13 @@
                 </div>
             </div>
             <div class="fieldset" id="skills">
-                <div class="section-title legend"><span class="pl-2px">SKILLS</span></div>
+                <div class="section-title legend"><span class="pl-2px">SKILLS</span>
+                    <hr>
+                </div>
+
                 <section class="skill-section">
                     <ul class="bullet-points">
-                        <header class="bullets-title">Languages</header>
+                        <header class="bullets-title">Languages:</header>
                         <b class="bullet-separator">Proficient:</b>
                         <li>TS</li>
                         <li>Python</li>
@@ -216,68 +235,70 @@
                     </ul>
                 </section>
                 <section class="skill-section">
-                    <ul class="bullet-points">
-                        <header class="bullets-title">Back-end</header>
-                        <li>Django</li>
-                        <li>Flask</li>
-                        <li>NodeJS</li>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>RESTful API</li>
-                        <li>Containerization</li>
-                        <li>CI/CD</li>
-                    </ul>
+                    <div class="bullet-points">
+                        <header class="bullets-title">Back-end:</header>
+                        <span>Django</span>
+                        <span>Flask</span>
+                        <span>NodeJS</span>
+                        <span>Express</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>RESTful API</span>
+                        <span>CI/CD</span>
+                    </div>
                 </section>
                 <section class="skill-section">
-                    <ul class="bullet-points">
-                        <header class="bullets-title">Front-end</header>
-                        <li>React(with Hooks)</li>
-                        <li>Responsive Design</li>
-                        <li>Bootstrap</li>
-                        <li>Performance Optimization</li>
-                        <li>Adobe XD</li>
-                        <li>UI/UX</li>
-                    </ul>
+                    <div class="bullet-points">
+                        <header class="bullets-title">Front-end:</header>
+                        <span>React(with Hooks)</span>
+                        <span>Responsive Design</span>
+                        <span>Bootstrap</span>
+                        <span>Performance Optimization</span>
+                        <span>Adobe XD</span>
+                        <span>UI/UX</span>
+                    </div>
                 </section>
                 <section class="skill-section">
-                    <ul class="bullet-points">
-                        <header class="bullets-title">Tools</header>
-                        <li>Git & Github</li>
-                        <li>AWS (EC2, EKS)</li>
-                        <li>Webpack</li>
-                        <li>Postman</li>
-                        <li>SYS admin</li>
-                        <li>Docker</li>
-                        <li>Pytorch</li>
-                        <li>Lighthouse</li>
-                    </ul>
+                    <div class="bullet-points">
+                        <header class="bullets-title">Tools:</header>
+                        <span>Git & Github</span>
+                        <span>AWS (EC2, EKS)</span>
+                        <span>Webpack</span>
+                        <span>Postman</span>
+                        <span>SYS admin</span>
+                        <span>Docker</span>
+                        <span>Pytorch</span>
+                        <span>Lighthouse</span>
+                    </div>
                 </section>
                 <section class="skill-section">
-                    <ul class="bullet-points">
-                        <header class="bullets-title">Concepts</header>
-                        <li>Algorithms</li>
-                        <li>Data structures</li>
-                        <li>Database Design</li>
-                        <li>OOP</li>
-                        <li>Machine learning</li>
-                        <li>Documentation</li>
-                        <li>TDD</li>
-
-                    </ul>
+                    <div class="bullet-points">
+                        <header class="bullets-title">Concepts:</header>
+                        <span>Algorithms</span>
+                        <span>Data structures</span>
+                        <span>Database Design</span>
+                        <span>OOP</span>
+                        <span>Machine learning</span>
+                        <span>Documentation</span>
+                        <span>TDD</span>
+                    </div>
                 </section>
             </div>
             <div class="fieldset" id="projects">
-                <div class="section-title legend"><span class="pl-2px">PROJECTS</span></div>
+                <div class="section-title legend"><span class="pl-2px">PROJECTS</span>
+                    <hr>
+                </div>
+
                 <div id="project-grid">
-                    <section>
+                    <!-- <section>
                         <div class="project-title"><a href="https://kataya1.com">My Résumé</a></div>
                         <p>
                             This Resume is a Website, it's both responsive and made so it can fit inside a
                             single page of paper size A4 or letter when printed.
                             Tech used: <b>HTML, CSS, JavaScript</b>.
                         </p>
-                    </section>
-                    <section>
+                    </section> -->
+                    <!-- <section>
                         <div class="project-title"><a href="https://github.com/kataya1/Casting-Agency">Casting
                                 Agency</a></div>
                         <p>
@@ -285,7 +306,7 @@
                             movies.
                             Tech used: <b>JWT, OpenID, OAuth2, Auth0, Flask, SqlAlchemy, PostgreSQL</b>.
                         </p>
-                    </section>
+                    </section> -->
                     <section>
                         <div class="project-title"><a href="https://github.com/kataya1/Pinterest">Pinterest</a>
                         </div>
@@ -295,7 +316,7 @@
                                 Heroku.</b>.
                         </p>
                     </section>
-                    <section>
+                    <!-- <section>
                         <div class="project-title"><a href="https://kataya1.github.io/movie_website_landing_page/">A
                                 movie website landing page</a></div>
                         <p>
@@ -303,7 +324,7 @@
                                 Google
                                 Lighthouse</b>.
                         </p>
-                    </section>
+                    </section> -->
 
                     <section>
                         <div class="project-title"><a href="https://github.com/kataya1/Oil-Paint-it">Oil-Paint-it</a>
@@ -313,23 +334,44 @@
                             Tech used:<b> Python, OpenCV, Matplotlib, Numpy</b>.
                         </p>
                     </section>
-                    <section>
+                    <!-- <section>
                         <div class="project-title"><a href="https://github.com/kataya1/a-game-story">FPS Game</a>
                         </div>
                         <p>
                             Story coding and user interface part of a 3D game. Tech used:<b> C#, Unity3D, Blender,
                                 ShaderLab</b>.
                         </p>
+                    </section> -->
+                    <section>
+                        <div class="project-title"><a
+                                href="https://www.npmjs.com/package/express-socket-routes">express-socket-routes</a>
+                        </div>
+                        <p>
+                            An unoppinianated library that adds routes for http's upgrade event to express
+                            framework. Tech used:<b> Javascript</b>.
+                        </p>
                     </section>
+                    <!-- <section>
+                        <div class="project-title"><a
+                                href="https://www.npmjs.com/package/express-socket-routes">express-socket-routes</a>
+                        </div>
+                        <p>
+                            An unoppinianated library that adds routes for http's upgrade event to express
+                            framework. Tech used:<b> Javascript</b>.
+                        </p>
+                    </section> -->
                 </div>
-                <div class="foot-note">Titles are links to the project's repo or website.</div>
+                <div class="foot-note hide-on-print">Titles are links to the project's repo or website.</div>
             </div>
             <!-- <section class="hide-on-print">
                 hide-on-print
             </section> -->
             <fieldset class="fieldset" id="AWARDS">
-                <div class="section-title legend"><span class="pl-2px">ACHIEVEMENTS</span></div>
-                <div class="event-container">
+                <div class="section-title legend"><span class="pl-2px">ACHIEVEMENTS</span>
+                    <hr>
+                </div>
+
+                <!-- <div class="event-container">
                     <span class="event-namecontext">
                         <span class="event-name">ITI</span>
                         <span class="event-location">Alexandria, Egypt</span>
@@ -340,7 +382,7 @@
                     </div>
                     <span class="event-description">Lead a team of 6 in the Information Technology Institute's
                         Pinterest Clone Graduation Project. </span>
-                </div>
+                </div> -->
                 <div class="event-container">
                     <span class="event-namecontext">
                         <span class="event-name">NASA SPACE APPS</span>
@@ -356,11 +398,14 @@
                 </div>
             </fieldset>
             <fieldset class="fieldset" id="COURSES">
-                <div class="section-title legend"><span class="pl-2px">COURSES</span></div>
+                <div class="section-title legend"><span class="pl-2px">COURSES and Collab</span>
+                    <hr>
+                </div>
+
                 <div class="courses-grid">
                     <section>
-                        <header class="bullets-title">Syllabus</header>
                         <ul class="normal-list">
+                            <span class="bullets-title">Syllabus:</span>
                             <li>Operating systems (A)</li>
                             <li>Systems Programming (A)</li>
                             <li>Distributed systems (B+)</li>
@@ -368,16 +413,25 @@
                             <li>Algorithms and Data Structures (B)</li>
                             <li>Computer Networks (A+)</li>
                             <li>Computer and Network Security (A-)</li>
-
                         </ul>
                     </section>
                     <section>
-                        <header class="bullets-title">Online</header>
                         <ul class="normal-list">
-                            <li>MAC FullStack Web development full Scholarship</li>
+                            <span class="bullets-title">Online:</span>
+                            <li>Dubai's MAC FullStack Web development Scholarship</li>
                             <li>MIT deep learning intensive course</li>
                             <li>HarvardX web development</li>
-                            <li>MAC Android basic Scholarship </li>
+                            <li>Dubai's MAC Android development Scholarship</li>
+                            <li>Security+ (in progress)</li>
+                            <li>AWS Cloud Practitioner(in progress)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul class="normal-list">
+                            <span class="bullets-title">Open Source:</span>
+                            <li>ZMK keyboard firmware: Contributing ps/2 mouse signal pass through(in progress)</li>
+                            <li>express-socket-routes: Authored this npm package to allow organization to vertically and
+                                horizontally scale websockets</li>
                         </ul>
                     </section>
                 </div>
