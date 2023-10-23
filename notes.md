@@ -13,3 +13,7 @@ Now the #resume css padding simulates the print margins. the css padding is remo
 the ::before and the ::marker fucks up the word file conversion (from pdf)
 replacing that with <hr>
 sympols like "◈" fucks the word file aswell need to keep it simple "-"
+
+---
+
+let's simplify <hr> and not use absolute positioning

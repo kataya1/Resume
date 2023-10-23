@@ -27,7 +27,7 @@
 
 @page {
     /* don't know i shoud have this */
-    /* margin: 0; */
+    /* margin: 0 NO NONONo; printers have a min margin 0.25in is safe*/ 
     margin: clamp(0.25in, 0.25in , 0.5in);
     /* this removes the page size option from chrome    */
     /* size: Letter; */

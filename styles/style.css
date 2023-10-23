@@ -417,8 +417,8 @@ span.pl-2px {
 #project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(190px, 90%), 1fr));
-    grid-template-rows: fit-content;
-    /* grid-auto-flow: dense; */
+    grid-template-rows: repeat(fit-content);
+    grid-auto-flow: dense;
     gap: 5px;
 }
 
@@ -471,9 +471,9 @@ section .bullet-points {
     gap: 10px;
 }
 
-.courses-grid section {
-    /* flex: 1 1 150px; */
-}
+/* .courses-grid section {
+    /* flex: 1 1 150px;
+} */
 
 #COURSES ul {
     /* list-style-type: none; */
