@@ -416,12 +416,17 @@ span.pl-2px {
 
 #project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(190px, 90%), 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(min(190px, 90%), 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     grid-template-rows: repeat(fit-content);
-    grid-auto-flow: dense;
+    /* grid-auto-flow: dense; */
     gap: 5px;
 }
-
+/* #project-grid{
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 30%;
+} */
 .project-title,
 .bullets-title {
     font-size: 1.05rem;

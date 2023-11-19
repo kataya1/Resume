@@ -17,3 +17,5 @@ sympols like "◈" fucks the word file aswell need to keep it simple "-"
 ---
 
 let's simplify <hr> and not use absolute positioning
+
+---

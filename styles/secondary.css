@@ -87,9 +87,9 @@ html {
     .resume-body {
         grid-template-areas:
             "education education"
-            "projects projects"
-            "skills skills"
             "exp exp"
+            "skills skills"
+            "projects projects"
             "aw aw"
             "courses courses";
     }
